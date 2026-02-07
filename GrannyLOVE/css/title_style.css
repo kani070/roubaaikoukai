@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+    background-size: cover;
+    background-attachment: local;
+}
+ 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute; /* 絶対位置に設定 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 幅を100%に設定 */
+    height: 100%; /* 高さを100%に設定 */
+    background-size: cover; /* 画像が要素をカバーするように設定 */
+    background-repeat: no-repeat; /* 画像を繰り返さないように設定 */
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    text-align: center; /* ボタンを中央に揃える */
+    margin-top: 700px;  /* 上部に余白を作成 */
+}
+
+.layer1 {
+    background-image: url('../img/classroom.PNG'); /* 1枚目の画像 */
+    z-index: 1;
+}
+
+.layer2 {
+    background-image: url('../img/lace.PNG'); /* 2枚目の画像 */
+    z-index: 2;
+}
+
+.layer3 {
+    background-image: url('../img/title_toshiko.PNG'); /* 3枚目の画像 */
+    z-index: 3;
+	opacity: 0; /* 初期透明度を0に設定 */
+    animation: slideIn 1s forwards; /* スライドインアニメーションを適用 */
+}
+/* スライドインアニメーション */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%); /* 左側から出現 */
+        opacity: 0; /* 初期透明度は0 */
+    }
+    100% {
+        transform: translateX(0); /* 元の位置に戻す */
+        opacity: 1; /* 最終的に透明度を1に設定 */
+    }
+}
+
+.layer4 {
+    background-image: url('../img/logo.PNG'); /* 4枚目の画像 */
+    z-index: 4;
+    animation: fadeInLeft 0.7s ease 0s 1 normal;
+}
+/* fadeInLeft */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu-item {
+    display: inline-block; /* ボタンを横並びに表示 */
+    margin: 20px;         /* ボタンの間に余白を追加 */
+    position: relative;   /* z-indexを適用するために相対位置を設定 */
+    z-index: 5; /* メニュー項目はレイヤーの上に表示 */
+}
+
+.menu-item img {
+    width: auto;  /* 画像のサイズを調整 */
+    height: auto;
+    z-index: 5; /* メニュー項目はレイヤーの上に表示 */
+    animation: bounceInUp 1s forwards; /* bounceInUpアニメーションを適用 */
+}
+
+/* bounceInUp */
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 3000px, 0) scaleY(5);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scaleY(0.9);
+    }
+    75% {
+        transform: translate3d(0, 10px, 0) scaleY(0.95);
+    }
+    90% {
+        transform: translate3d(0, -5px, 0) scaleY(0.985);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+#white-overlay {
+    z-index: 9999; /* ホワイトアウト用のオーバーレイが一番上 */
+}

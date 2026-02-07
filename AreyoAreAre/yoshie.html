@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>芳恵とお話</title>
+    <link rel="stylesheet" href="css/yoshie.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="layer bg-washitsu"></div>
+        <div id="anger-overlay" class="layer anger-overlay"></div>
+
+        <div class="layer char-layer">
+            <img src="img/yoshie.png" id="char-img" class="yoshie-img" alt="芳恵">
+        </div>
+
+        <div class="layer fg-ui-overlay"></div>
+
+        <div class="ui-content-layer">
+            <div class="ui-counter">
+                のこり：<span id="remaining-count">10</span>回
+            </div>
+
+            <div class="ui-message">
+                <p id="toshiko-text">……何ボサっとしてんのさ。用があるなら言いな！</p>
+            </div>
+
+            <div class="ui-choices">
+                <button class="q-btn btn-y" onclick="makeChoice(0)"><span></span></button>
+                <button class="q-btn btn-r" onclick="makeChoice(1)"><span></span></button>
+                <button class="q-btn btn-g" onclick="makeChoice(2)"><span></span></button>
+                <button class="q-btn btn-b" onclick="makeChoice(3)"><span></span></button>
+            </div>
+
+            <button class="wakatta-btn" onclick="startAnswerPhase()"></button>
+        </div>
+    </div>
+
+    <div id="death-screen" class="death-overlay">
+        <div class="death-text">YOU DIED</div>
+    </div>
+
+    <div id="share-modal" class="modal-overlay">
+        <div class="share-card">
+            <h3>芳恵の喝：完全勝利</h3>
+            <div class="share-stats">
+                のこり回数：<strong><span id="final-remaining">0</span></strong>回
+            </div>
+            <p id="result-text">
+                「仁丹」くらい、<br>言われなくても分かりなさいよ！
+            </p>
+            <div class="share-buttons">
+                <button class="sns-btn x-btn" onclick="shareOnX()">𝕏(Twitter)に報告する</button>
+                <button class="sns-btn title-btn" onclick="goToTitle()">タイトルへ戻る</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgm-normal" src="audio/flattery.mp3" loop></audio>
+    <audio id="bgm-angry" src="audio/pinchi.mp3" loop></audio>
+    <audio id="se-death" src="audio/crisis.mp3"></audio>
+    <audio id="se-text" src="audio/Message.mp3"></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+    <audio id="se-correct" src="audio/kettei2.mp3"></audio>
+
+    <script src="js/game_yoshie.js"></script>
+</body>
+</html>

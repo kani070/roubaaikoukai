@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>GrannyLOVE</title>
+    <link rel="stylesheet" type="text/css" href="css/title_style.css">
+</head>
+
+<body>
+    <div class="start">
+        <div class="menu-item">
+            <img src="img/start.PNG" alt="スタート" onclick="playSoundAndNavigate();">
+        </div>
+		
+        <div class="background-image layer1"></div>
+        <div class="background-image layer2"></div>
+        <div class="background-image layer3"></div>
+        <div class="background-image layer4"></div>
+		
+        <!-- 効果音 -->
+        <audio id="start-sound">
+            <source src="./audio/start.mp3" type="audio/mp3">
+            <p>（audio要素に非対応なブラウザ向けの表示）</p>
+        </audio>
+    </div>
+
+    <!-- タイトル画面のBGM -->
+    <audio id="bgm" autoplay loop>
+        <source src="audio/title.mp3" type="audio/mp3">
+        <p>（audio要素に非対応なブラウザ向けの表示）</p>
+    </audio>
+	
+    <!-- ホワイトアウト用のオーバーレイ -->
+    <div id="white-overlay" class="white-overlay"></div>
+
+    <script src="js/title.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>設定</title>
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+    <div class="setting-screen">
+        <div class="header-area">
+            <img src="img/setting.png" alt="設定" class="title-img">
+        </div>
+
+        <div class="setting-list">
+            <div class="setting-item">
+                <div class="item-label">BGM音量</div>
+                <input type="range" class="volume-slider" min="0" max="100" value="30" oninput="playSE()">
+            </div>
+
+            <div class="setting-item">
+                <div class="item-label">SE音量</div>
+                <input type="range" class="volume-slider" min="0" max="100" value="50" oninput="playSE()">
+            </div>
+
+            <div class="setting-item">
+                <div class="item-label">文字速度</div>
+                <div class="speed-btns">
+                    <button class="speed-btn" onclick="playSE()">はやい</button>
+                    <button class="speed-btn active" onclick="playSE()">ふつう</button>
+                    <button class="speed-btn" onclick="playSE()">おそい</button>
+                </div>
+            </div>
+			
+			<div class="credit-area">
+                <p>音源提供</p>
+                <div class="credit-links">
+                    <a href="https://pocket-se.info/" target="_blank">ポケットサウンド</a>
+                    <a href="https://soundeffect-lab.info/" target="_blank">効果音ラボ</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-area">
+            <a href="index.html" onclick="playSE()">
+                <img src="img/modoru.png" alt="もどる" class="modoru-btn">
+            </a>
+        </div>
+    </div>
+
+    <audio id="bgm-setting" src="audio/op28-1.mp3" loop></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

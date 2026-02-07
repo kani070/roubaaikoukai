@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選択画面</title>
+    <link rel="stylesheet" href="css/select.css">
+</head>
+<body>
+
+	<audio id="bgm" src="audio/kaerustreet.mp3" loop></audio>
+<audio id="se-select" src="audio/kettei1.mp3"></audio>
+<audio id="se-decide" src="audio/kettei2.mp3"></audio>
+<audio id="se-back" src="audio/kettei2.mp3"></audio>
+	
+    <div class="game-container">
+         <!-- 背景 -->
+    <div class="bg"></div>
+
+        <main class="character-select">
+            <div class="char-card" data-char="toshiko">
+                <img src="img/toshikoselect.png" alt="寿子">
+            </div>
+            <div class="char-card" data-char="keiko">
+                <img src="img/keikoselect.png" alt="恵子">
+            </div>
+            <div class="char-card" data-char="yoshie">
+                <img src="img/yoshieselect.png" alt="芳恵">
+            </div>
+        </main>
+
+        <footer class="button-area">
+            <button id="btn-decide" class="action-btn">
+                <img src="img/kettei.png" alt="決定">
+            </button>
+            <button id="btn-back" class="action-btn">
+                <img src="img/modoru.png" alt="もどる">
+            </button>
+        </footer>
+    </div>
+
+    <script src="js/select.js"></script>
+</body>
+</html>

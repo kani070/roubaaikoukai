@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT DETAIL | BA・BATH | 老婆愛好会</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shop-detail.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+        </div>
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contents.html">CONTENTS</a></li>
+            <li><a href="member.html">MEMBER</a></li>
+            <li><a href="shop.html" class="active">SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+            <li class="nav-cart">
+                <a href="cart.html">
+                    <img src="assets/images/cart.svg" alt="CART">
+                    <span class="cart-count">0</span> </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container detail-container">
+    <nav class="breadcrumb reveal">
+        <a href="index.html">TOP</a> / <a href="shop.html">SHOP</a> / <span id="js-breadcrumb">Loading...</span>
+    </nav>
+
+    <div class="product-main">
+        <div class="product-gallery reveal">
+            <div class="main-image">
+                <img src="" alt="" id="js-main-img">
+            </div>
+            <div class="sub-images" id="js-sub-images-container"></div>
+        </div>
+
+        <div class="product-info reveal">
+            <span class="product-cat" id="js-cat">CATEGORY</span>
+            <h1 class="product-name" id="js-name">PRODUCT NAME</h1>
+            <p class="price" id="js-price">¥0 <span class="tax">tax in</span></p>
+
+            <div class="product-story">
+                <h3>THE STORY</h3>
+                <div id="js-story" class="story-content"></div>
+            </div>
+
+            <div class="product-spec">
+                <dl>
+                    <dt>SPEC</dt>
+                    <dd id="js-spec">Material / Size information</dd>
+                </dl>
+            </div>
+
+            <div class="purchase-area">
+                <div class="quantity">
+                    <label>QUANTITY</label>
+                    <input type="number" value="1" min="1">
+                </div>
+                <button class="btn-add-cart">ADD TO CART</button>
+            </div>
+            
+            <div class="back-to-shop">
+                <a href="shop.html">← BACK TO LIST</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="老婆愛好会">
+        </div>
+        <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+const productData = {
+    'onion': {
+        name: '玉ねぎヘアータオルキャップ',
+        cat: 'HAIR CARE / BATH ACCESSORY',
+        price: '¥2,000',
+        images: ['assets/images/shop/item-onion.jpg','assets/images/shop/item-onion-02.jpg'],
+        spec: 'マイクロファイバー（ポリエステル85%、ナイロン15%） / フリーサイズ',
+        story: '<p>縁側で静かに髪を乾かす老婆の姿。その頭上に輝く、凛とした「玉ねぎ」のフォルム。私たちはその普遍的な美しさを、現代のバスタイムへと昇華させました。</p><p>超極細繊維が水分を素早く吸収。被るだけで、あなたは慈愛に満ちた聖域へと足を踏み入れます。</p>'
+    },
+    'massager': {
+        name: '玉ねぎ型スカルプブラシ「揉み出しの境地」',
+        cat: 'HAIR CARE / MASSAGE',
+        price: '¥1,400',
+        images: ['assets/images/shop/massager.png'],
+        spec: 'シリコン樹脂 / 直径約8cm / 耐熱温度60℃',
+        story: '<p>おばあちゃんの結い上げた髪の、あの不思議な安心感。そのフォルムを、最先端の人間工学に基づいたスカルプブラシへと昇華させました。</p><p>「玉ねぎ」の筋目のような突起が頭皮の汚れを掻き出し、頂点のお団子部分が握り手にフィット。まるで縁側で優しく頭を撫でられているかのような、至福の「揉み出し」を体験いただけます。</p>'
+    },
+    'bathbomb': {
+        name: '「あ〜爽快！」からだ洗浄剤',
+        cat: 'BATH BOMB / BODY CARE',
+        price: '¥1,200',
+        images: ['assets/images/shop/bathbomb.png'],
+        spec: '重炭酸入浴剤 / 20錠入り / 日本製',
+        story: '<p>「あ〜爽快！」と思わず声が漏れる、20錠入りのからだ用洗浄剤。入れ歯洗浄剤を彷彿とさせるパッケージに、8つの美肌成分を凝縮しました。</p><p>シュワシュワと溶け出す重炭酸が、日々の疲れを隅々まで洗い流します。※本品は入浴剤です。入れ歯・マウスピース等には使用しないでください。</p>'
+    },
+    'teeth': {
+        name: '入れ歯ヘアクリップ（白磁仕立て）',
+        cat: 'HAIR ACCESSORY',
+        price: '¥1,300',
+        images: ['assets/images/shop/item-teeth.jpg'],
+        spec: 'アセテート樹脂、合金 / 8cm × 4cm',
+        story: '<p>人生の経験を「噛み締める」かのように、あなたの髪をガッチリとホールドする義歯型クリップ。白磁のような艶やかな質感が、シュールかつエレガントな横顔を演出します。</p>'
+    },
+    'yukata': {
+        name: '郷愁の祖母の浴衣風婆スローブ',
+        cat: 'LOUNGE WEAR',
+        price: '¥4,800',
+        images: ['assets/images/shop/yukata.png'],
+        spec: '綿100%（タオル地） / フリーサイズ（着丈120cm）',
+        story: '<p>おばあちゃんのあの浴衣の記憶。懐かしい幾何学模様を、吸水性の高い肉厚なタオル地に再現しました。</p><p>湯上がりの火照った肌を優しく包み込み、日常を穏やかな避暑地へと変えてくれる一着です。</p>'
+    },
+    'duck': {
+        name: 'アヒル長老（お風呂の守護神）',
+        cat: 'BATH TOY',
+        price: '¥800',
+        images: ['assets/images/shop/item-duck.png', 'assets/images/shop/item-duck-02.jpg'],
+        spec: '塩化ビニル樹脂 / 全高約10cm',
+        story: '<p>お団子が象徴的な、数多の湯船を見守ってきた「長老」。その眼差しは、日々の疲れを癒やす深い慈愛に満ちています。</p><p>湯船に浮かべるだけで、不思議と湯冷めしにくいという噂が広まる、愛好会のベストセラーです。</p>'
+    },
+    'oke': {
+        name: 'BA・BATH 特製風呂桶（檜仕立て）',
+        cat: 'BATH ACCESSORY',
+        price: '¥5,500',
+        images: ['assets/images/shop/oke.png'],
+        spec: '檜(ヒノキ) / 直径22.5cm × 高さ10cm',
+        story: '<p>味わい深い檜の桶に、BA・BATHのブランドロゴを刻印。お湯を汲むたび、カポーンという軽快な音がバスルームに響き、昭和の情緒を呼び覚まします。</p>'
+    },
+    'towel': {
+        name: '垂れ乳タオル「重力への賛歌」',
+        cat: 'BATH ACCESSORY',
+        price: '¥1,800',
+        images: ['assets/images/shop/item-towel.jpg', 'assets/images/shop/item-towel-02.png'],
+        spec: '綿100%（泉州タオル） / 34cm × 120cm（ロングサイズ）',
+        story: '<p>時の流れに抗わない。重力さえも味方につける老婆の強さと美しさを表現したデザイン。非常に「長く」作られたこのタオルは、使い込むほどにあなたの肌に馴染みます。</p>'
+    },
+    'hairbrush': {
+        name: '老婆の慈愛 万倍かんざしパドルブラシ',
+        cat: 'HAIR CARE',
+        price: '¥2,000',
+        images: ['assets/images/shop/hairbrush.png'],
+        spec: '本体：ABS樹脂 / ピン：ポリアセタール樹脂（かんざし形状）',
+        story: '<p>一見すると普通のパドルブラシ。しかし、そのピンの一本一本は精巧な「かんざし」の形をしています。頭皮のツボを心地よく刺激し、慈愛に満ちたマッサージ体験を提供します。</p>'
+    },
+    'mask': {
+        name: 'BA・BATH エイジングマスク',
+        cat: 'SKIN CARE',
+        price: '¥1,200',
+        images: ['assets/images/shop/item-mask.jpg', 'assets/images/shop/item-mask-02.png'],
+        spec: 'オーガニックコットン、美容液（30ml）',
+        story: '<p>若返るのではなく「老い」を疑似体験する。装着している間、あなたは鏡の中に「未来の自分」と対面します。今この時への感謝、深い慈愛に目覚めるための儀式用マスクです。</p>'
+    },
+    'mirror': {
+        name: '叡智のシワ体験鏡「未来視」',
+        cat: 'INTERIOR / MIRROR',
+        price: '¥1,800',
+        images: ['assets/images/shop/Mirror.png'],
+        spec: 'ガラス、ABS樹脂 / 卓上タイプ（15cm × 20cm）',
+        story: '<p>覗き込むだけで、あなたの顔に美しい「時の証（シワ）」が刻まれる不思議な鏡。あなたがこれから積み重ねる叡智と経験を確認するための儀式です。</p>'
+    }
+};
+
+function initProductDetail() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    if (productId && productData[productId]) {
+        const data = productData[productId];
+
+        document.getElementById('js-breadcrumb').textContent = data.name;
+        document.getElementById('js-name').textContent = data.name;
+        document.getElementById('js-cat').textContent = data.cat;
+        document.getElementById('js-price').innerHTML = `${data.price} <span class="tax">tax in</span>`;
+        document.getElementById('js-story').innerHTML = data.story;
+        document.getElementById('js-spec').textContent = data.spec;
+        document.title = `${data.name} | BA・BATH | 老婆愛好会`;
+
+        const mainImg = document.getElementById('js-main-img');
+        const thumbContainer = document.getElementById('js-sub-images-container');
+        
+        mainImg.src = data.images[0];
+        mainImg.alt = data.name;
+        thumbContainer.innerHTML = '';
+
+        data.images.forEach((imgSrc) => {
+            const thumbDiv = document.createElement('div');
+            thumbDiv.className = 'sub-img';
+            thumbDiv.innerHTML = `<img src="${imgSrc}" alt="">`;
+
+            thumbDiv.addEventListener('click', () => {
+                mainImg.style.opacity = '0';
+                setTimeout(() => {
+                    mainImg.src = imgSrc;
+                    mainImg.style.opacity = '1';
+                }, 200);
+            });
+            thumbContainer.appendChild(thumbDiv);
+        });
+    } else {
+        window.location.href = 'shop.html';
+    }
+}
+
+initProductDetail();
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

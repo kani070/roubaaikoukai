@@ -1,0 +1,103 @@
+/* --- Page Header --- */
+.page-header {
+    padding: 180px 0 80px;
+    text-align: center;
+    background-color: #fcfcfc;
+    margin-bottom: 100px;
+}
+.page-header h1 {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    color: #1a1a1a;
+    font-weight: normal;
+}
+.en-title {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+/* --- Section Title --- */
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 1.5rem; letter-spacing: 0.3em; color: #1a1a1a; margin-bottom: 10px; }
+.section-title span { font-size: 0.75rem; color: #999; letter-spacing: 0.2em; }
+
+/* --- Philosophy --- */
+.mission-content { display: flex; gap: 30px; }
+.mission-item { 
+    background: #fff; 
+    padding: 40px; 
+    border: 1px solid #eee; 
+    flex: 1; 
+    text-align: center;
+    transition: 0.4s;
+}
+.mission-item:hover { border-color: #1a1a1a; }
+.mission-item h3 { 
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1a1a1a;
+    display: inline-block;
+}
+.mission-item p { font-size: 0.9rem; color: #444; }
+
+/* --- Worldview --- */
+.worldview-text { 
+    line-height: 2.4; 
+    text-align: justify; 
+    background: #f9f9f9; 
+    padding: 50px; 
+    border-left: 1px solid #1a1a1a; /* 極細の黒線で洗練 */
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* --- History (Timeline) --- */
+.timeline { 
+    border-left: 1px solid #eee; 
+    margin-left: 120px; 
+    padding-left: 40px; 
+    position: relative; 
+}
+.timeline-item { position: relative; margin-bottom: 50px; }
+.timeline-item::before {
+    content: ""; 
+    position: absolute; 
+    left: -46px; 
+    top: 8px;
+    width: 10px; height: 10px; 
+    background: #fff; 
+    border: 1px solid #1a1a1a; 
+    border-radius: 50%;
+}
+.timeline-item .year { 
+    position: absolute;
+    left: -140px;
+    top: 0;
+    width: 80px;
+    font-family: sans-serif;
+    font-weight: bold; 
+    font-size: 1rem; 
+    color: #1a1a1a; 
+    text-align: right;
+}
+.timeline-item .event {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* --- Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1.5s all ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

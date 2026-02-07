@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>寿子とお話</title>
+    <link rel="stylesheet" href="css/toshiko.css">
+</head>
+	
+	<body>
+		
+		<div id="share-modal" class="modal-overlay">
+    <div class="share-card">
+        <h3>寿子さんの思い出</h3>
+        <p id="result-text">寿子さんが探していたのは<br><strong>「急須」</strong>でした！</p>
+        <div class="share-stats">
+            のこり：<span id="final-remaining">--</span>回で正解！
+        </div>
+        <div class="share-buttons">
+            <button class="sns-btn x-btn" onclick="shareOnX()">𝕏 で共有する</button>
+            <button class="sns-btn title-btn" onclick="goToTitle()">タイトルに戻る</button>
+        </div>
+    </div>
+</div>
+		
+    <audio id="bgm-main" src="audio/uccari.mp3" loop></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+    <audio id="se-correct" src="audio/kettei2.mp3"></audio>
+    <audio id="se-cancel" src="audio/kettei2.mp3"></audio>
+    <audio id="se-text" src="audio/Message.mp3"></audio>
+	
+	
+    
+    <div class="game-container">
+        <div class="layer bg-washitsu"></div>
+
+        <div class="layer char-layer">
+            <img src="img/toshiko.png" alt="寿子" class="toshiko-img">
+        </div>
+
+        <div class="layer fg-ui-overlay"></div>
+
+        <div class="ui-content-layer">
+            <div class="ui-counter">
+                のこり：<span id="remaining-count">20</span>回
+            </div>
+
+            <div class="ui-message">
+                <p id="toshiko-text">あれよあれあれ…<br>なんだったかしら</p>
+            </div>
+
+            <div class="ui-choices">
+                <button class="q-btn btn-y" onclick="makeChoice(0)"><span>質問1</span></button>
+                <button class="q-btn btn-r" onclick="makeChoice(1)"><span>質問2</span></button>
+                <button class="q-btn btn-g" onclick="makeChoice(2)"><span>質問3</span></button>
+                <button class="q-btn btn-r" onclick="makeChoice(3)"><span>質問4</span></button>
+            </div>
+
+            <button class="wakatta-btn" onclick="startAnswerPhase()"></button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal-layer">
+        <div id="modal-body"></div>
+    </div>
+
+    <script src="js/game_toshiko.js" ></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrannyLOVE</title>
+	<link href="https://fonts.googleapis.com/css2?family=Kosugi Maru:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- フェードイン用オーバーレイ -->
+    <div id="fade-overlay" class="fade-overlay"></div>
+	
+    <div class="game-container" id="game-container">
+        <img id="background" src="img/classroom.png" alt="背景" class="background">
+        <img id="seifuku1" src="img/seifuku1.PNG" alt="寿子" class="character" style="display:none;">
+        <img id="text-image" src="img/text.PNG" alt="テキストボックス" class="text-image">
+		<div id="text-box" class="text-box">
+            <p id="text-content"></p>
+        </div>
+    </div>
+	
+	<audio id="bgm" autoplay loop>
+	   <source src="audio/nichijou.mp3" type="audio/mp3">
+	   <p>（audio要素に非対応なブラウザ向けの表示）</p>
+	</audio>
+
+    <script src="js/game1.js"></script>
+</body>
+</html>

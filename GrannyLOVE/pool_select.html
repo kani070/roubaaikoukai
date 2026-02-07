@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrannyLOVE</title>
+	<link href="https://fonts.googleapis.com/css2?family=Kosugi Maru:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/select.css">
+</head>
+<body>
+	 <div id="game-container">
+<img id="background" src="img/pool.PNG" alt="背景" class="background">
+		  <img id="seifuku1" src="img/bikini1.PNG" alt="寿子" class="character" >
+		  <img id="text-image" src="img/text.PNG" alt="テキストボックス" class="text-image">
+		   <div id="text-box" class="text-box">
+		     <button id="1Button">綺麗だよ</button>
+		     <button id="2Button">可愛いね</button>
+		     <button id="3Button">セクシーだね</button>
+<p id="text-content"></p>
+        </div>
+		 
+		 <audio id="bgm" autoplay loop>
+	   <source src="audio/select.mp3" type="audio/mp3">
+	   <p>（audio要素に非対応なブラウザ向けの表示）</p>
+	     </audio>
+		 
+		 	<!-- 効果音のオーディオ要素 -->
+		<audio id="button-sound">
+			<source src="audio/button.mp3" type="audio/mp3">
+			<p>（audio要素に非対応なブラウザ向けの表示）</p>
+		</audio>
+
+    <script>
+        // 効果音を再生し、ページ遷移を行う関数
+        function playButtonSound(page) {
+            const sound = document.getElementById("button-sound");
+            sound.currentTime = 0; // 効果音を最初から再生
+            sound.play().then(() => {
+                sound.onended = function() {
+                    window.location.href = page; // 効果音が終了した後にページ遷移
+                };
+            }).catch(function(error) {
+                console.log('効果音の再生に失敗しました:', error);
+                window.location.href = page; // 効果音再生に失敗した場合でもページ遷移
+            });
+        }
+
+
+        // 綺麗だよボタンを押した場合
+        document.getElementById("1Button").addEventListener("click", function() {
+			playButtonSound("pool_reaction1.html");
+        });
+
+        // 可愛いねボタンを押した場合
+        document.getElementById("2Button").addEventListener("click", function() {
+			playButtonSound("pool_reaction1.html");
+        });
+
+        // セクシーだねを押した場合
+        document.getElementById("3Button").addEventListener("click", function() {
+			playButtonSound("pool_reaction2.html");
+        });
+    </script>
+
+</body>
+	
+</html>

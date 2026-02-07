@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#title-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: url("../img/washitsu.png") center/cover no-repeat;
+  filter: blur(2px) brightness(0.95);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+.menu {
+  position: absolute;
+  bottom: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.img-btn img,
+.icon-btn img {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+.img-btn.main {
+  width: 500px;
+   margin: 0 auto -100px;
+}
+
+.img-btn.sub {
+  width: 400px;
+   margin: 0 auto 10px;
+}
+
+.icon-btn {
+  position: absolute;
+  bottom: 5%;
+  width: 130px;
+}
+
+.icon-btn.left { left: 5%; }
+.icon-btn.right { right: 5%; }
+
+.img-btn,
+.icon-btn {
+  transition: transform 0.15s ease, filter 0.15s ease;display: block;
+}
+
+.img-btn:hover,
+.icon-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.img-btn:active,
+.icon-btn:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+.img-btn.main {
+  animation: floatBtn 2.5s ease-in-out infinite;
+}
+
+
+#title-screen {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

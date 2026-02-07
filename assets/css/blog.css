@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+/* --- 2カラムレイアウト --- */
+.blog-container {
+    display: flex;
+    gap: 80px;
+    padding-top: 140px; /* ヘッダー分 */
+    margin-bottom: 120px;
+}
+
+.blog-main { flex: 1; }
+.blog-sidebar { width: 200px; }
+
+/* ページヘッダー（左寄せスタイル） */
+.blog-main .page-header {
+    text-align: left;
+    margin-bottom: 80px;
+}
+.blog-main .page-header h1 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    margin: 10px 0;
+}
+
+/* 記事リスト項目 */
+.post-item {
+    margin-bottom: 80px;
+}
+
+.post-link {
+    display: flex;
+    gap: 40px;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
+.post-thumb {
+    width: 280px;
+    height: 180px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.post-thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.post-link:hover .post-thumb img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.post-content { flex: 1; }
+
+.post-meta { 
+    margin-bottom: 12px; 
+    font-size: 0.75rem; 
+    letter-spacing: 0.1em;
+}
+.post-date { color: #999; margin-right: 20px; }
+.post-category {
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 2px 12px;
+    font-size: 0.7rem;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-weight: normal;
+    transition: color 0.3s;
+}
+
+.post-link:hover .post-title {
+    color: #999;
+}
+
+.post-excerpt {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+}
+
+/* サイドバー */
+.sidebar-widget {
+    margin-bottom: 60px;
+}
+
+.sidebar-widget h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: #1a1a1a;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar-widget ul { list-style: none; padding: 0; }
+.sidebar-widget ul li { margin-bottom: 12px; }
+.sidebar-widget ul li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+.sidebar-widget ul li a:hover { color: #1a1a1a; }
+
+/* ページネーション */
+.pagination {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagination span, .pagination a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #999;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.pagination a:hover { color: #1a1a1a; }
+.pagination .current {
+    color: #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* レスポンシブ */
+@media (max-width: 900px) {
+    .blog-container { flex-direction: column; gap: 60px; }
+    .post-link { flex-direction: column; gap: 20px; }
+    .post-thumb { width: 100%; }
+    .blog-sidebar { width: 100%; }
+}

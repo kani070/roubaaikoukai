@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+.join-container {
+    max-width: 600px;
+    margin: 180px auto 120px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.join-header h1 {
+    font-family: serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 20px;
+}
+
+.join-intro {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+/* 誓約文エリア（老婆愛好会らしさ） */
+.oath-section {
+    background: #f9f9f9;
+    padding: 40px;
+    margin-bottom: 60px;
+    text-align: left;
+    border: 1px solid #eee;
+}
+
+.oath-section h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.oath-section p {
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* フォームスタイル（Contactと統一） */
+.join-form .form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.join-form label {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.join-form input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.join-form input:focus {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.btn-submit-join {
+    width: 100%;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.4s;
+}
+
+.btn-submit-join:hover {
+    background: #444;
+}
+
+/* 動画オーバーレイ */
+#video-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+#joinVideo {
+    max-width: 90%;
+    max-height: 80vh;
+    box-shadow: 0 0 50px rgba(255,255,255,0.1);
+}
+
+.ceremony-msg {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    color: #666;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* 儀式完了後のスタイル */
+.completion-content {
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

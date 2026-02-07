@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔法老女コシイテーナ | CONTENTS | 老婆愛好会</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/koshi.css">
+</head>
+<body class="koshi-page">
+
+<header class="dark-header"> <nav>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+        </div>
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contents.html" class="active">CONTENTS</a></li>
+            <li><a href="member.html">MEMBER</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="koshi-hero">
+        <div class="koshi-hero-inner">
+            <span class="sub-title reveal">愛好会オリジナルアニメーション</span>
+            <h1 class="reveal">魔法老女<br><span class="main-name">コシイテーナ</span></h1>
+            <p class="catchphrase reveal">「りんくるりんくる☆とぅいんくる！」</p>
+        </div>
+    </section>
+
+    <section class="video-section container">
+        <div class="section-title reveal">
+            <h2 class="magic-text">TRANSFORMATION</h2>
+            <span>変身バンク・アニメーション</span>
+        </div>
+        <div class="video-wrapper reveal">
+            <video controls poster="assets/images/contents/koshi-poster.jpg">
+                <source src="assets/video/koshi-transform.mp4" type="video/mp4">
+                ご使用のブラウザは動画再生に対応していません。
+            </video>
+        </div>
+        <p class="video-caption reveal">制作：老婆愛好会アニメーション制作部（全編120fps フルリミテッドアニメ）</p>
+    </section>
+
+    <section class="skill-section container">
+        <div class="section-title reveal">
+            <h2 class="magic-text">SKILLS</h2>
+            <span>主な必殺技</span>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-item reveal">
+                <h3>腰痛霧散<br><span class="en-skill">（ランバー・エンド）</span></h3>
+                <p>光り輝く湿布を貼り付け、あらゆる痛みを浄化する。射程距離は半径3メートル。</p>
+            </div>
+            <div class="skill-item reveal">
+                <h3>慈愛の熱茶<br><span class="en-skill">（ゴールデン・ティー）</span></h3>
+                <p>一服の茶で、敵の戦意を完全に消失させ、縁側へといざなう究極の和解技。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="老婆愛好会">
+        </div>
+        <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // スクロールアニメーションの制御
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

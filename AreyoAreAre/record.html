@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>記録</title>
+    <link rel="stylesheet" href="css/record.css">
+</head>
+<body>
+    <div class="record-screen">
+        <div class="header-area">
+            <img src="img/kiroku.png" alt="記録" class="title-img">
+        </div>
+
+        <nav class="tab-area">
+            <img src="img/subete.png" id="tab-all" class="tab-btn active" onclick="changeTab('all')">
+            <img src="img/clear.png" id="tab-clear" class="tab-btn" onclick="changeTab('clear')">
+            <img src="img/gameover.png" id="tab-fail" class="tab-btn" onclick="changeTab('fail')">
+        </nav>
+
+        <div class="record-list" id="record-list">
+            </div>
+
+        <div class="footer-area">
+            <a href="index.html" onclick="playSE()">
+                <img src="img/modoru.png" alt="もどる" class="modoru-btn">
+            </a>
+        </div>
+    </div>
+
+    <audio id="bgm-record" src="audio/op28-1.mp3" loop></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+
+    <script src="js/record.js"></script>
+</body>
+</html>

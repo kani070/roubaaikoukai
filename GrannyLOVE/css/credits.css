@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+    background-color: black;
+    color: white;
+    overflow: hidden; /* スクロールバーを非表示に */
+}
+
+#credits-container {
+    position: relative;
+    height: 100vh; /* 画面の高さに合わせる */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 縦方向の中央揃え */
+    align-items: center; /* 横方向の中央揃え */
+}
+
+#credits {
+    display: flex;
+    flex-direction: column; /* 行を縦に並べる */
+    animation: scroll 90s linear forwards; /* 無限ループを削除 */
+    text-align: center; /* 文字を中央揃え */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(83%); /* 初期位置（下から表示） */
+    }
+    100% {
+        transform: translateY(-70%); /* 終了位置（上に消える） */
+    }
+}

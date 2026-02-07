@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>恵子とお話</title>
+    <link rel="stylesheet" href="css/keiko.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="layer bg-washitsu"></div>
+
+        <div class="layer char-layer">
+            <img src="img/keiko.png" class="toshiko-img" alt="恵子">
+        </div>
+
+        <div class="layer fg-ui-overlay"></div>
+
+        <div class="ui-content-layer">
+            <div class="ui-counter">
+                のこり：<span id="remaining-count">20</span>回
+            </div>
+
+            <div class="ui-message">
+                <p id="toshiko-text">……何か、私に訊きたいことがあるのかしら？</p>
+            </div>
+
+            <div class="ui-choices">
+                <button class="q-btn btn-y" onclick="makeChoice(0)"><span></span></button>
+                <button class="q-btn btn-r" onclick="makeChoice(1)"><span></span></button>
+                <button class="q-btn btn-g" onclick="makeChoice(2)"><span></span></button>
+                <button class="q-btn btn-b" onclick="makeChoice(3)"><span></span></button>
+            </div>
+
+            <button class="wakatta-btn" onclick="startAnswerPhase()"></button>
+        </div>
+    </div>
+
+    <div id="share-modal" class="modal-overlay">
+        <div class="share-card">
+            <h3>思考の記録</h3>
+            <div class="share-stats">
+                のこり回数：<span id="final-remaining">0</span>
+            </div>
+            <p id="result-text">恵子の問いを解き明かした！</p>
+            <div class="share-buttons">
+                <button class="sns-btn x-btn" onclick="shareOnX()">𝕏で共有する</button>
+                <button class="sns-btn title-btn" onclick="goToTitle()">タイトルへ戻る</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgm-main" src="audio/katarai.mp3" loop></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+    <audio id="se-text" src="audio/Message.mp3"></audio>
+    <audio id="se-correct" src="audio/kettei2.mp3"></audio>
+    <audio id="se-cancel" src="audio/kettei2.mp3"></audio>
+
+    <script src="js/game_keiko.js"></script>
+</body>
+</html>

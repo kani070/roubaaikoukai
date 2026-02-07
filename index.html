@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老婆愛好会 | Official Website</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="loading">
+
+<div id="loader">
+    <div class="loader-content">
+        <p class="loader-copy">かぐわしい、おばあちゃん。</p>
+    </div>
+</div>
+
+<header>
+   <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.svg" alt="老婆愛好会">
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html" class="active">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contents.html">CONTENTS</a></li>
+            <li><a href="member.html">MEMBER</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content reveal">
+            <span class="en-title">ELEGANCE OF AGING</span>
+            <h1>歳を重ねた愛。</h1>
+            <p>老婆愛好会は、豊かな経験を愛し、次世代へ繋ぐプラットフォームです。</p>
+        </div>
+    </section>
+
+    <section id="news" class="container reveal">
+        <div class="section-title">
+            <h2>LATEST NEWS</h2>
+            <span>最新のお知らせ</span>
+        </div>
+        <ul class="news-list">
+            <li><a href="#"><span class="date">2026.01.05</span> <span class="txt">新作ゲーム『あれよあれあれ』事前登録開始</span></a></li>
+            <li><a href="#"><span class="date">2025.12.25</span> <span class="txt">【イベント】コシイテーナ爆誕祭 開催決定</span></a></li>
+            <li><a href="#"><span class="date">2025.10.45</span> <span class="txt">祖母井寿子氏 米寿（88歳）記念式典のご案内</span></a></li>
+			<li><a href="#"><span class="date">2024.12.01</span> <span class="txt">「師走にシワ吸う」キャンペーン開催</span></a></li>
+            <li><a href="#"><span class="date">2024.09.15</span> <span class="txt">日本講堂集会：知恵の継承プロジェクト</span></a></li>
+            <li><a href="#"><span class="date">2024.04.08</span> <span class="txt">「シワの日」記念チャリティオークション開催</span></a></li>
+        </ul>
+        <div class="view-more">
+            <a href="blog.html">VIEW ALL BLOG</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="老婆愛好会">
+        </div>
+        <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // 1. オープニングアニメーション
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('fade-out');
+            document.body.classList.remove('loading');
+        }, 2000); // 2秒間コピーを表示
+    });
+
+    // 2. スクロールでふわっと表示（Reveal Animation）
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

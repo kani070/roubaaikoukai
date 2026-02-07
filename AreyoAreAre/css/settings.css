@@ -1,0 +1,105 @@
+/* ベースレイアウト（記録画面を流用） */
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: "serif"; }
+
+.setting-screen {
+    width: 100vw; height: 100vh;
+    background: url("../img/Washitsu.png") center/cover no-repeat;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px; box-sizing: border-box;
+}
+
+.header-area { margin-bottom: 5px; }
+.title-img { height: 170px; }
+
+/* 設定リストエリア */
+.setting-list {
+    width: 90%; max-width: 800px;
+    background: rgba(253, 245, 230, 0.9);
+    border-radius: 40px; padding: 100px;
+    display: flex; flex-direction: column; gap: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.setting-item {font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.item-label { font-size: 3rem; font-weight: bold; color: #4a3024; }
+
+/* スライダーのデザイン */
+.volume-slider {
+    width: 60%; cursor: pointer;
+    accent-color: #8d6e63; /* つまみの色 */
+}
+
+/* 速度ボタンの設定 */
+.speed-btns { display: flex; gap: 10px; }
+.speed-btn { font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
+	font-size: 1.4rem;
+    padding: 20px 50px; border: 5px solid #8d6e63;
+    background: white; border-radius: 30px;
+    cursor: pointer; font-weight: bold; transition: 0.2s;
+}
+.speed-btn.active { background: #8d6e63; color: white; }
+.speed-btn:hover { background: #f0e6d2; }
+
+/* クレジットエリアのデザイン */
+.credit-area {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #8d6e63; /* 上に点線を入れて区切りを作る */
+    text-align: center;
+    font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
+}
+
+.credit-area p {
+    font-size: 0.9rem;
+    color: #8d6e63;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.1em;
+}
+
+.credit-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.credit-links a {
+    font-size: 0.85rem;
+    color: #4a3024;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* リンクのホバー演出（和風な下線） */
+.credit-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #8d6e63;
+    transition: 0.3s;
+}
+
+.credit-links a:hover {
+    color: #8d6e63;
+}
+
+.credit-links a:hover::after {
+    width: 100%;
+}
+
+/* フッター（もどるボタンのモーション） */
+.footer-area { margin-top: auto; padding-bottom: 30px; }
+
+.modoru-btn {
+    height: 150px; cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    display: block;
+}
+.modoru-btn:hover { transform: scale(1.1); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+.modoru-btn:active { transform: scale(0.95); }

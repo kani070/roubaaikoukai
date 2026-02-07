@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrannyLOVE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #game-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* アスペクト比を保持して画面を埋める */
+        }
+
+        #start-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 9999; /* 動画の上に表示 */
+        }
+
+        #start-button img {
+            width: 1000px; /* 画像のサイズを指定 */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <video id="intro-video" src="video/koshi.mp4" playsinline></video>
+        <div id="start-button">
+            <img src="img/view.PNG" alt="再生ボタン"> <!-- ここで画像を指定 -->
+        </div>
+    </div>
+
+    <a href="koshiEND3.html" id="next-link" style="display:none;">次へ進む</a>
+
+    <script>
+        const video = document.getElementById('intro-video');
+        const startButton = document.getElementById('start-button');
+        const nextLink = document.getElementById('next-link');
+
+        // 画像の再生ボタンをクリックしたら動画を再生し、ボタンを非表示に
+        startButton.addEventListener('click', function() {
+            video.play();
+            video.muted = false; // ミュートを解除
+            startButton.style.display = 'none'; // ボタンを非表示に
+        });
+
+        // 動画が終了したら次のページに遷移
+        video.addEventListener('ended', function() {
+            window.location.href = "koshiEND3.html"; // 遷移先のページ
+        });
+    </script>
+
+</body>
+</html>

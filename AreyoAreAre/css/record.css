@@ -1,0 +1,76 @@
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+
+.record-screen {
+    width: 100vw; height: 100vh;
+    background: url("../img/Washitsu.png") center/cover no-repeat;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px; box-sizing: border-box;
+}
+
+.header-area { margin-bottom: 5px; }
+.title-img { height: 170px; }
+
+.tab-area { display: flex; gap: 15px; margin-bottom: 15px; }
+.tab-btn { height: 70px; cursor: pointer; transition: 0.2s; opacity: 0.7; }
+.tab-btn:hover { transform: scale(1.05); opacity: 1; }
+/* 選択中のタブを強調 */
+.tab-btn.active { 
+    opacity: 1; 
+    filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 3px orange); 
+    transform: scale(1.1);
+}
+
+/* 記録リストのスクロール設定 */
+.record-list {
+    width: 95%; max-width: 1100px;
+    height: 60vh; /* 画面の6割の高さを確保 */
+    overflow-y: scroll; /* 常にスクロールバーを出す設定 */
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 15px; padding: 10px;
+    box-sizing: border-box;
+}
+
+/* カードのデザイン */
+.record-card {
+    background: rgba(253, 245, 230, 0.9);
+    border-radius: 30px; padding: 15px;
+    display: flex; align-items: center; gap: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* アイコン切り抜き */
+.char-icon {
+    width: 80px; height: 80px;
+    background: #fff; border-radius: 50%;
+    overflow: hidden; position: relative; flex-shrink: 0;
+    border: 2px solid #8d6e63;
+}
+.char-icon img {
+    position: absolute; width: 150%;
+    left: 45%; transform: translateX(-50%); top: 5%;
+}
+
+.card-content { flex: 1; color: #4a3024; font-family: "Hiragino Mincho ProN", "MS PMincho", serif; }
+.card-top { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: bold; }
+.status-clear { color: #2e7d32; }
+.status-fail { color: #d32f2f; }
+.target-name { font-size: 1.8rem; font-weight: bold; margin: 2px 0; }
+.stats { font-size: 1rem; color: #666; }
+
+.footer-area { margin-top: 50px; }
+.modoru-btn { height: 150px; cursor: pointer;transition: /* 1. 動きを滑らかにする設定（参考CSSの.action-btnより） */
+    transition: transform 0.15s ease, filter 0.15s ease;
+    
+    /* 画像の初期状態 */
+    display: block;
+}
+
+/* 3. クリックした瞬間の動き（参考CSSの.action-btn:activeより） */
+.modoru-btn:active {
+    transform: scale(0.95); /* 0.95倍に少し縮んで「押した感」を出す */
+}
+
+/* スクロールバーをおしゃれに */
+.record-list::-webkit-scrollbar { width: 12px; }
+.record-list::-webkit-scrollbar-thumb { background: #8d6e63; border-radius: 10px; border: 3px solid #fdf5e6; }
+.record-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }

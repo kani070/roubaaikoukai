@@ -1,0 +1,231 @@
+/* 全画面の親要素 */
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 1. 背景 */
+.bg-washitsu {
+    background: url("../img/washitsu.png") center/cover no-repeat;
+    z-index: 1;
+}
+
+/* 2. キャラクター */
+.char-layer {
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 5%;
+    pointer-events: none; /* クリックを邪魔しない */
+}
+.toshiko-img {
+    height: 130vh; /* 少し大きくして存在感を出す */
+	/* ★ これを追加。10% などの数字を増やすとさらに下がります */
+    transform: translateX(-5%) translateY(20%);
+}
+
+/* 3. 前面オーバーレイ（吹き出しや枠） */
+.fg-ui-overlay {
+    background: url("../img/toshiko_fukidashi.png") center/cover no-repeat;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* 4. 操作UIレイヤー */
+.ui-content-layer {
+	/* 日本語の標準的な明朝体セット */
+    font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+	pointer-events: none; /* 親レイヤーはクリックを通す */
+}
+
+.ui-counter, .ui-message, .ui-choices, .wakatta-btn, .q-btn {
+    pointer-events: auto; /* ボタン類はクリックできるようにする */
+}
+
+/* ★ 孫のツッコミ用：黄色でイタリック */
+.player-text {
+    color: #ccac00 !important; /* 少し濃い目の黄色（視認性重視） */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* --- SNS風ポップアップのデザイン --- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* 初期状態は非表示 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.share-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    animation: popupAnim 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.share-card h3 {
+    margin: 0 0 15px;
+    color: #4a3024;
+    font-family: serif;
+    border-bottom: 2px solid #f0e6d2;
+    padding-bottom: 10px;
+}
+
+#result-text { font-size: 1.2rem; margin: 20px 0; }
+#result-text strong { font-size: 1.8rem; color: #d32f2f; }
+
+.share-stats {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sns-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+.x-btn { background: #000; color: white; }
+.title-btn { background: #8d6e63; color: white; }
+.sns-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+/* のこり回数：画像左上の枠の中に配置 */
+.ui-counter {
+    position: absolute;
+    top: 5%;
+    left: 8%; /* 画像の「のこり」枠の空きスペースに合わせる */
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4a3024;
+}
+
+/* セリフ：画像下部の吹き出しの中に配置 */
+.ui-message {
+    position: absolute;
+    bottom: 5%; /* 吹き出しの底の位置 */
+    left: 5%; /* 吹き出しの左の位置 */
+    width: 60%; /* 吹き出しの幅いっぱいに使う */
+    height: 25%; /* 吹き出しの高さに合わせる */
+    display: flex;
+    align-items: center; /* 上下中央 */
+    justify-content: left; /* 左右中央 */
+    text-align: left;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.ui-message p {
+    /* ★ここを大きくする */
+    font-size: 2.8rem;     /* 2.0rem から 2.8rem くらいにアップ */
+    line-height: 1.4;      /* 行間を少し広げると読みやすい */
+    font-weight: bold;     /* 太字にするとより強調されます */
+    color: #4a3024;        /* 文字色 */
+    margin: 0;
+}
+
+/* 質問ボタンエリア：右側に縦に並べる */
+.ui-choices {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* ボタン同士の隙間 */
+}
+
+/* ボタンのサイズ修正（ここが重要！） */
+.q-btn {
+    width: 400px;  /* 画像の横幅 */
+    height: 130px;  /* ★300pxから修正：画像の縦幅 */
+    background: transparent no-repeat center/contain;
+	/* 背景の設定をここに変更 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* ★重要！containから 100% 100% に変更 */
+
+    border: none;
+	background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
+.q-btn span {
+	/* 日本語の標準的な明朝体セット */
+    font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4a3024;
+    margin-top: -5px; /* 文字の位置を微調整 */
+}
+
+.btn-y { background-image: url("../img/toshiko_yellow.png"); }
+.btn-r { background-image: url("../img/toshiko_red.png"); }
+.btn-g { background-image: url("../img/toshiko_green.png"); }
+
+/* わかった！ボタン */
+.wakatta-btn {
+    position: absolute;
+    bottom: 4%;
+    right: 5%;
+    width: 200px;
+    height: 80px;
+    background: url("../img/toshiko_wakatta.png") no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+/* modal-overlay の display: none を JS で flex に変えることで表示されます */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* ← ここが重要 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.q-btn:hover, .wakatta-btn:hover { transform: scale(1.05); }
+.q-btn:active, .wakatta-btn:active { transform: scale(0.95); }

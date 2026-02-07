@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG | 老婆愛好会</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+        </div>
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contents.html" class="active">CONTENTS</a></li>
+            <li><a href="member.html">MEMBER</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container blog-container">
+    <div class="blog-main">
+        <div class="page-header">
+            <span class="en-title reveal">STAFF BLOG</span>
+            <h1 class="reveal">事務局日誌</h1>
+            <p class="reveal">老婆愛好会の日常と、活動の記録</p>
+        </div>
+
+        <div class="post-list">
+    <article class="post-item reveal">
+        <a href="blog-detail.html" class="post-link">
+            <div class="post-thumb">
+                <img src="assets/images/blog/obaa.png" alt="記号論考">
+            </div>
+            <div class="post-content">
+                <div class="post-meta">
+                    <span class="post-date">2026.01.06</span>
+                    <span class="post-category">開発秘話</span>
+                </div>
+                <h2 class="post-title">「おばあちゃん」という記号の解体学 ——『GrannyLOVE』から考える表現の倫理と笑い</h2>
+                <p class="post-excerpt">「お団子頭に赤い玉のかんざし」がいまだに記号として機能し続けるのはなぜか。記号論とアンコンシャス・バイアスの視点から、その魅力と危うさを考察します。</p>
+                <span class="read-more">READ MORE</span>
+            </div>
+        </a>
+    </article>
+
+            <article class="post-item reveal">
+                <a href="blog-detail.html" class="post-link">
+                    <div class="post-thumb">
+                        <img src="assets/images/blog/live.jpg" alt="イベント">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">2025.12.28</span>
+                            <span class="post-category">イベント</span>
+                        </div>
+                        <h2 class="post-title">【報告】「コシイテーナ爆誕祭」無事終了いたしました</h2>
+                        <p class="post-excerpt">先週末開催された爆誕祭へのご来場、誠にありがとうございました。魔法老女の変身バンクの熱気に包まれ…</p>
+                        <span class="read-more">READ MORE</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="post-item reveal">
+                <a href="blog-detail.html" class="post-link">
+                    <div class="post-thumb">
+                        <img src="assets/images/blog/grarabu.png" alt="新作ゲーム">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">2025.12.15</span>
+                            <span class="post-category">お知らせ</span>
+                        </div>
+                        <h2 class="post-title">新作ゲーム『GrannyLove』開発進捗レポート #05</h2>
+                        <p class="post-excerpt">現在、縁側での会話シーンの分岐を実装中です。あなたの選択次第で、老婆たちの笑顔が変化します。</p>
+                        <span class="read-more">READ MORE</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+        <div class="pagination reveal">
+            <span class="current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#" class="next">&raquo;</a>
+        </div>
+    </div>
+
+    <aside class="blog-sidebar reveal">
+        <div class="sidebar-widget">
+            <h3>CATEGORY</h3>
+            <ul>
+                <li><a href="#">論考・エッセイ</a></li> <li><a href="#">お知らせ</a></li>
+            <li><a href="#">イベント報告</a></li>
+            <li><a href="#">今日のおやつ</a></li>
+            <li><a href="#">開発秘話</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-widget">
+            <h3>ARCHIVE</h3>
+            <ul>
+                <li><a href="#">2026年1月</a></li>
+                <li><a href="#">2025年12月</a></li>
+                <li><a href="#">2025年11月</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="老婆愛好会">
+        </div>
+        <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // スクロールアニメーション用
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

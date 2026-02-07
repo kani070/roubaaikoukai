@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+/* --- ヘッダー・カートアイコン --- */
+/* ナビゲーション内のカート用スタイル */
+.nav-cart {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-cart a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;  /* 背景の黒丸サイズ */
+    height: 44px;
+    background: #1a1a1a; /* 背景の黒丸 */
+    border-radius: 50%;
+    position: relative;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-cart img {
+    width: 20px; /* アイコンのサイズ */
+    height: 20px;
+    /* アイコンが黒の場合、白く反転させます */
+    filter: brightness(0) invert(1);
+}
+
+.nav-cart a:hover {
+    transform: scale(1.1);
+    background: #333; /* ホバー時に少し色を変える */
+}
+
+/* カート件数バッジ（必要な場合） */
+.cart-count {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #d11c2c; /* 差し色（金・銀など） */
+    color: #fff;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- ショップヒーロー --- */
+.shop-hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('../images/shop/aging.png') center/cover;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    padding-bottom: 100px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.brand-sub {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.brand-logo img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+}
+
+/* モバイル対応の調整 */
+@media (max-width: 600px) {
+    .brand-logo img {
+        max-width: 280px;
+    }
+}
+
+.brand-copy {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    font-weight: lighter;
+}
+
+/* --- ブランドストーリー --- */
+.brand-story {
+    padding: 140px 20px;
+    text-align: center;
+}
+
+.story-inner h2 {
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.story-inner h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; left: 50%;
+    width: 20px; height: 1px;
+    background: #1a1a1a;
+    transform: translateX(-50%);
+}
+
+.story-inner p {
+    font-size: 0.95rem;
+    line-height: 2.6;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 商品グリッド（サイズアップ修正） --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px 50px; /* 余白を広くしてゆとりを持たせる */
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.product-item {
+    background: transparent;
+}
+
+.product-img {
+    position: relative;
+    aspect-ratio: 1 / 1; /* 3/4から1/1に変更して画像を大きく強調 */
+    background: #f9f9f9;
+    overflow: hidden;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    width: 88%; /* 画像の占有率をアップ */
+    height: 88%;
+    object-fit: contain;
+    transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-item:hover .product-img img {
+    transform: scale(1.1);
+}
+
+/* タグ */
+.tag {
+    position: absolute;
+    top: 25px; left: 25px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+/* 商品詳細（サイズアップ修正） */
+.product-detail {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.product-detail h3 {
+    font-family: "Yu Mincho", serif;
+    font-size: 1.25rem; /* サイズアップ */
+    font-weight: normal;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+}
+
+.price {
+    font-family: serif;
+    font-size: 1.2rem; /* サイズアップ */
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+
+.tax {
+    font-size: 0.7rem;
+    color: #999;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.desc {
+    font-size: 0.9rem; /* サイズアップ */
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    height: auto; /* 説明文をしっかり読ませるため制限解除（または4.5em程度に広げる） */
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-view {
+    display: inline-block;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 14px 60px; /* ボタンを大きく */
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    transition: 0.4s;
+    font-weight: bold;
+}
+
+.btn-view:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 1100px) {
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 80px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid { 
+        grid-template-columns: 1fr; 
+        gap: 60px 0;
+    }
+    .brand-logo img {
+        max-width: 280px;
+    }
+}

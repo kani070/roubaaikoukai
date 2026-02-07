@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* --- Page Header --- */
+.page-header {
+    padding: 180px 0 80px;
+    text-align: center;
+    background: #fcfcfc;
+}
+
+.page-header h1 {
+    font-family: serif;
+    font-size: 3rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.page-header p {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.2em;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    max-width: 700px; /* フォームは少し細めが美しい */
+    margin-bottom: 120px;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-intro p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #444;
+}
+
+/* --- Styled Form --- */
+.styled-form {
+    background: #fff;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form-group label span {
+    font-size: 0.6rem;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 2px 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+    letter-spacing: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background: transparent;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Selectの見た目調整 */
+.form-group select {
+    cursor: pointer;
+    color: #333;
+}
+
+/* テキストエリアの調整 */
+.form-group textarea {
+    resize: none;
+    line-height: 1.6;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-submit {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 20px 60px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #444;
+}
+
+/* --- SNS Section --- */
+.sns-section {
+    text-align: center;
+    padding: 80px 0;
+    border-top: 1px solid #eee;
+}
+
+.sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.sns-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.sns-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: #1a1a1a;
+    transition: width 0.3s;
+}
+
+.sns-link:hover::after {
+    width: 100%;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .sns-icons { flex-direction: column; gap: 20px; }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBER | 老婆愛好会</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/member.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+        </div>
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contents.html">CONTENTS</a></li>
+            <li><a href="member.html" class="active">MEMBER</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="page-header">
+        <span class="en-title reveal">OUR TEAM</span>
+        <h1 class="reveal">MEMBER</h1>
+        <p class="reveal">慈愛と叡智を編む、愛好会の精鋭たち</p>
+    </div>
+
+    <section class="container">
+        <div class="member-list">
+            
+            <div class="member-card reveal">
+                <div class="member-visual">
+                    <img src="assets/images/member/roujin.png" alt="老人 耄人">
+                </div>
+                <div class="member-detail">
+                    <span class="member-role">匠 / ARCHIVIST</span>
+                    <h2 class="member-name">老人 耄人 <span class="en-name">Roujin Moujin</span></h2>
+                    <div class="member-relation">
+                        <h3>Relationship</h3>
+                        <p>コンピューターおばあちゃん</p>
+                    </div>
+                    <div class="member-comment">
+                        <p>「おばあちゃんの知恵を、最新の技術でアーカイブする。それが私の、最高のオマ孝行です。」</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-card reveal">
+                <div class="member-visual">
+                    <img src="assets/images/member/roushi.png" alt="麻婆 老師">
+                </div>
+                <div class="member-detail">
+                    <span class="member-role">技 / COPYWRITER</span>
+                    <h2 class="member-name">麻婆 老師 <span class="en-name">Mabo Roshi</span></h2>
+                    <div class="member-relation">
+                        <h3>Relationship</h3>
+                        <p>ライティング、作詞担当</p>
+                    </div>
+                    <div class="member-comment">
+                        <p>「シワの数だけ、物語があります。私たちはその物語を、次世代の輝きへと変えていきたいのです。」</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-card reveal">
+                <div class="member-visual">
+                    <img src="assets/images/member/manjirou.png" alt="厳島神社 卍郎">
+                </div>
+                <div class="member-detail">
+                    <span class="member-role">力 / VITALITY</span>
+                    <h2 class="member-name">厳島神社 卍郎 <span class="en-name">Manjirou Itsukushimajinja</span></h2>
+                    <div class="member-relation">
+                        <h3>Relationship</h3>
+                        <p>活力担当（最年少）</p>
+                    </div>
+                    <div class="member-comment">
+                        <p>「腰が痛くても、心は踊る。老女の魅力を世界中に広めたいとオマいます！」</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="老婆愛好会">
+        </div>
+        <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

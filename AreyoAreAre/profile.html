@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>プロフィール</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="profile-screen">
+        <header class="header-area">
+            <img src="img/profile_title.png" alt="キャラクター紹介" class="title-img">
+        </header>
+
+        <main class="profile-content">
+            <nav class="char-list">
+                <ul>
+                    <li class="char-tab active" data-char="toshiko">
+                        <div class="char-icon icon-toshiko"><img src="img/toshiko.png" alt="寿子"></div>
+                        <span class="tab-name">寿子</span>
+                    </li>
+                    <li class="char-tab" data-char="yoshie">
+                        <div class="char-icon icon-yoshie"><img src="img/yoshie.png" alt="芳恵"></div>
+                        <span class="tab-name">芳恵</span>
+                    </li>
+                    <li class="char-tab" data-char="keiko">
+                        <div class="char-icon icon-keiko"><img src="img/keiko.png" alt="恵子"></div>
+                        <span class="tab-name">恵子</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="char-detail">
+                <div class="detail-inner">
+                    <div class="char-stand-container">
+                        <img src="img/toshiko.png" alt="立ち絵" id="detail-img" class="stand-img">
+                    </div>
+                    <div class="char-info">
+                        <h2 id="detail-name" class="char-name"></h2>
+                        
+                        <div class="char-specs">
+                            <p>年齢：<span id="detail-age"></span>歳</p>
+                            <p>性格：<span id="detail-personality"></span></p>
+                        </div>
+                        <div class="char-description">
+                            <p id="detail-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-area">
+             <a href="index.html" onclick="playSE()">
+                <img src="img/modoru.png" alt="もどる" class="modoru-btn">
+            </a>
+        </footer>
+    </div>
+
+    <audio id="bgm-profile" src="audio/op28-1.mp3" loop></audio>
+    <audio id="se-select" src="audio/kettei2.mp3"></audio>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

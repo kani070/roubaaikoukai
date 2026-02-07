@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+body, html { margin: 0; padding: 0; overflow: hidden; background: #000; }
+
+.game-container {
+    width: 100vw; height: 100vh;
+    position: relative;
+}
+
+.layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* 寿子の背景とUIデザインをそのまま使用 */
+.bg-washitsu {
+    background: url("../img/shosai.png") center/cover no-repeat;
+    z-index: 1;
+}
+
+.char-layer {
+    z-index: 2; display: flex; align-items: flex-end; padding-left: 5%;
+}
+
+.toshiko-img {
+    height: 130vh;
+    transform: translateX(-5%) translateY(20%);
+}
+
+.fg-ui-overlay {
+    background: url("../img/toshiko_fukidashi.png") center/cover no-repeat;
+    z-index: 3; pointer-events: none;
+}
+
+/* 操作UI */
+.ui-content-layer {
+    font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
+    position: absolute; inset: 0; z-index: 10; pointer-events: none;
+}
+
+.ui-counter, .ui-message, .ui-choices, .wakatta-btn, .q-btn { pointer-events: auto; }
+
+.ui-counter {
+    position: absolute; top: 5%; left: 8%;
+    font-size: 3rem; font-weight: bold; color: #4a3024;
+}
+
+.ui-message {
+    position: absolute; bottom: 5%; left: 5%;
+    width: 60%; height: 25%;
+    display: flex; align-items: center; padding: 0 40px; box-sizing: border-box;
+}
+
+.ui-message p {
+    font-size: 2.8rem; line-height: 1.4; font-weight: bold; color: #4a3024; margin: 0;
+}
+
+/* ★ 孫のツッコミ用：黄色でイタリック */
+.player-text {
+    color: #ccac00 !important; /* 少し濃い目の黄色（視認性重視） */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* 質問ボタン */
+.ui-choices {
+    position: absolute; top: 5%; right: 5%;
+    display: flex; flex-direction: column; gap: 5px;
+}
+
+/* --- ボタンの動きの設定 --- */
+
+.q-btn, .wakatta-btn {
+    transition: transform 0.1s; /* 動きをなめらかにする */
+    cursor: pointer;
+}
+
+/* マウスを乗せた時：少し大きくする */
+.q-btn:hover, .wakatta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* クリックした瞬間：少し凹ませる */
+.q-btn:active, .wakatta-btn:active {
+    transform: scale(0.95);
+}
+
+/* 質問ボタンの基本スタイル（寿子さんデザインを維持） */
+.q-btn {
+    width: 400px;
+    height: 130px;
+    background: transparent no-repeat center/100% 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.q-btn span {
+    font-family: "Hiragino Mincho ProN", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a3024;
+}
+
+/* ボタン画像（寿子さんの色をそのまま使う） */
+.btn-y { background-image: url("../img/toshiko_yellow.png"); }
+.btn-r { background-image: url("../img/keiko_blue.png"); }
+.btn-g { background-image: url("../img/toshiko_green.png"); }
+.btn-b { background-image: url("../img/toshiko_yellow.png"); } /* 4つ目 */
+
+.wakatta-btn {
+    position: absolute; bottom: 4%; right: 5%;
+    width: 200px; height: 80px;
+    background: url("../img/toshiko_wakatta.png") no-repeat center/contain;
+    border: none; cursor: pointer;
+}
+
+/* ポップアップ */
+.modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+    display: none; justify-content: center; align-items: center; z-index: 1000;
+}
+.share-card { background: white; padding: 30px; border-radius: 20px; text-align: center; }
+.sns-btn { padding: 10px 20px; margin: 5px; border-radius: 20px; border: none; cursor: pointer; font-weight: bold; }
+.x-btn { background: #000; color: #fff; }
+.title-btn { background: #8d6e63; color: #fff; }

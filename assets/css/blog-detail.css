@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+/* 1. 全体コンテナの修正 */
+.blog-container {
+    max-width: 850px;
+    /* marginではなくpaddingでヘッダーとの距離（200px）を確保 */
+    margin: 0 auto 120px !important; 
+    padding: 200px 25px 0; 
+    box-sizing: border-box;
+}
+
+/* 2. 記事エリアの重なり防止 */
+.blog-post {
+    display: block;
+    width: 100%;
+}
+
+/* 3. タイトルエリア（post-header） */
+.post-header {
+    text-align: center;
+    /* 下側にしっかりとした空間を作り、線との重なりを防ぐ */
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 1;
+}
+
+.post-cat {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.post-title {
+    font-family: "Yu Mincho", serif;
+    font-size: 2.2rem;
+    line-height: 1.5;
+    margin: 0 0 25px;
+    font-weight: normal;
+    color: #1a1a1a;
+    /* 文字が詰まらないように調整 */
+    word-break: break-all;
+}
+
+.post-meta {
+    font-size: 0.75rem;
+    color: #bbb;
+    letter-spacing: 0.1em;
+}
+
+/* 4. 本文エリア（post-content）の開始位置を強制固定 */
+.post-content {
+    display: block;
+    font-size: 1.05rem;
+    line-height: 2.2;
+    color: #333;
+    /* タイトルエリアから100%独立させる */
+    margin-top: 0;
+    padding-top: 20px;
+    clear: both;
+}
+
+/* 各セクションの見出し */
+.post-content h2 {
+    font-family: "Yu Mincho", serif;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #1a1a1a;
+    display: inline-block;
+    margin: 80px 0 30px;
+    padding-bottom: 5px;
+    font-weight: normal;
+}
+
+/* 「はじめに」の上の余白を確保 */
+.post-content .intro h2 {
+    margin-top: 20px;
+}
+
+.post-content p {
+    margin-bottom: 2.5em;
+    text-align: justify;
+}
+
+/* 5. 箇条書き・引用・その他 */
+.post-content ul {
+    margin: 30px 0;
+    padding-left: 1.5em;
+}
+
+.post-content li {
+    margin-bottom: 15px;
+}
+
+.ac-reference {
+    margin: 50px 0;
+    padding: 40px;
+    background: #f9f9f9;
+    border-left: 3px solid #1a1a1a;
+}
+
+.conclusion {
+    margin-top: 100px;
+    padding: 50px;
+    border: 1px solid #eee;
+    background: #fcfcfc;
+}
+
+.post-footer {
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* 戻るボタン */
+.post-footer {
+    margin-top: 120px;
+    text-align: center;
+}
+.back-to-contents a {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    border: 1px solid #1a1a1a;
+    padding: 18px 40px;
+    transition: 0.3s;
+}
+.back-to-contents a:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .blog-container { padding-top: 140px; }
+    .post-title { font-size: 1.6rem; }
+    .post-header { padding-bottom: 40px; margin-bottom: 40px; }
+}

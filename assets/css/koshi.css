@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/* --- マジカルピンクの定義 --- */
+:root {
+    --magic-pink-deep: #ff4081;  /* 濃いピンク */
+    --magic-pink-light: #ffb6c1; /* 淡いピンク */
+    --magic-glow: 0 0 10px rgba(255, 64, 129, 0.6), 0 0 20px rgba(255, 64, 129, 0.4); /* 発光エフェクト */
+}
+
+/* コシイテーナ専用の背景設定 */
+.koshi-page {
+    background-color: #0a0508; /* ほんのり赤みのある黒 */
+    color: #eee;
+    /* 背景全体に微細なキラキラテクスチャを敷く（任意） */
+    background-image: radial-gradient(white 1%, transparent 2%),
+                      radial-gradient(white 1%, transparent 2%);
+    background-size: 100px 100px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    opacity: 1;
+}
+
+/* ダーク背景用ヘッダーのマジカル化 */
+.dark-header {
+    background: rgba(10, 5, 8, 0.8) !important;
+    border-bottom: 1px solid rgba(255, 64, 129, 0.2) !important;
+    backdrop-filter: blur(5px);
+}
+.dark-header nav ul li a { color: #aaa; }
+.dark-header nav ul li a:hover,
+.dark-header nav ul li a.active {
+    color: var(--magic-pink-light);
+    text-shadow: 0 0 5px var(--magic-pink-deep);
+}
+.dark-header nav ul li a::after {
+    background: linear-gradient(to right, var(--magic-pink-deep), var(--magic-pink-light));
+    box-shadow: 0 0 5px var(--magic-pink-deep);
+}
+.dark-header .logo img { filter: brightness(0) invert(1) drop-shadow(0 0 2px var(--magic-pink-deep)); }
+
+/* --- ヒーローエリア：魔法の覚醒 --- */
+.koshi-hero {
+    height: 90vh;
+    /* ピンクのオーラをまとわせる */
+    background: radial-gradient(circle at center, rgba(255, 64, 129, 0.2) 0%, rgba(10, 5, 8, 0.8) 70%),
+                linear-gradient(to bottom, transparent, #0a0508),
+                url('../images/contents/koshi-hero-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* キラキラエフェクト（擬似要素で星を表現） */
+.koshi-hero::before, .koshi-hero::after {
+    content: '✦';
+    position: absolute;
+    color: var(--magic-pink-light);
+    text-shadow: var(--magic-glow);
+    font-size: 2rem;
+    opacity: 0.5;
+}
+.koshi-hero::before { top: 20%; left: 20%; animation: twinkle 3s infinite alternate; }
+.koshi-hero::after { bottom: 30%; right: 25%; animation: twinkle 4s infinite alternate-reverse; }
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+    100% { opacity: 0.8; transform: scale(1.1) rotate(20deg); }
+}
+
+.sub-title {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.4em;
+    color: var(--magic-pink-light);
+    text-shadow: 0 0 5px var(--magic-pink-deep);
+    margin-bottom: 20px;
+}
+
+.koshi-hero-inner .main-name {
+    font-size: clamp(3rem, 10vw, 7rem);
+    color: #fff; /*芯は白く */
+    /* 多重の影で強力な発光を表現 */
+    text-shadow: 0 0 10px var(--magic-pink-deep),
+                 0 0 20px var(--magic-pink-deep),
+                 0 0 40px var(--magic-pink-deep),
+                 0 0 80px var(--magic-pink-light);
+    font-family: "Yu Mincho", serif;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+}
+
+.catchphrase {
+    font-size: 1.3rem;
+    margin-top: 40px;
+    letter-spacing: 0.4em;
+    color: var(--magic-pink-light);
+    font-weight: lighter;
+    position: relative;
+    display: inline-block;
+}
+/* キャッチフレーズの両脇にキラキラをつける */
+.catchphrase::before, .catchphrase::after {
+    content: '✧';
+    margin: 0 15px;
+    color: var(--magic-pink-deep);
+    text-shadow: var(--magic-glow);
+}
+
+/* --- マジカルテキスト共通設定 --- */
+.magic-text {
+    color: var(--magic-pink-light) !important;
+    letter-spacing: 0.3em !important;
+    text-shadow: 0 0 10px var(--magic-pink-deep), 0 0 20px var(--magic-pink-deep);
+}
+
+/* --- ビデオプレイヤー：魔法の鏡 --- */
+.video-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* 枠線をピンクのグラデーション発光に */
+    border: 2px solid transparent;
+    background-image: linear-gradient(#0a0508, #0a0508), linear-gradient(to right, var(--magic-pink-deep), var(--magic-pink-light));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 30px rgba(255, 64, 129, 0.3);
+    position: relative;
+    border-radius: 10px; /* 少し角を丸くして優しさを */
+    overflow: hidden;
+}
+
+video {
+    width: 100%; display: block;
+    border-radius: 8px;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--magic-pink-light);
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+/* --- 技紹介：魔導書スタイル --- */
+.skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.skill-item {
+    background: rgba(255, 64, 129, 0.05); /* うっすらピンクの背景 */
+    padding: 40px;
+    border: 1px solid rgba(255, 64, 129, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 0 10px 0; /* 対角線を丸くして魔法感を出す */
+}
+
+/* ホバー時のエフェクト */
+.skill-item:hover {
+    background: rgba(255, 64, 129, 0.1);
+    border-color: var(--magic-pink-light);
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.4), inset 0 0 10px rgba(255, 64, 129, 0.2);
+    transform: translateY(-5px);
+}
+
+/* ホバー時にキラキラが走る */
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.7s;
+}
+.skill-item:hover::before { left: 150%; }
+
+
+.skill-item h3 {
+    color: var(--magic-pink-light);
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-shadow: 0 0 5px var(--magic-pink-deep);
+    border-bottom: 1px dashed rgba(255, 64, 129, 0.4); /* 下線を破線にしてファンタジー感 */
+    padding-bottom: 10px;
+}
+
+.en-skill {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-top: 5px;
+    color: var(--magic-pink-deep);
+    text-shadow: none;
+    opacity: 0.9;
+}
+
+.skill-item p {
+    font-size: 0.95rem;
+    color: #ffdce5; /* ピンクがかった白 */
+    line-height: 2;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .skill-grid { grid-template-columns: 1fr; }
+    .koshi-hero { height: 70vh; }
+}
