@@ -52,7 +52,7 @@
 .shop-hero {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('../images/shop/aging.png') center/cover;
+                url('../images/shop/aging.jpg') center/cover;
     display: flex;
     align-items: flex-end; 
     justify-content: center;
