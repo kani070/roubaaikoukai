@@ -22,8 +22,12 @@ body {
 
 .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* 画面の横幅いっぱい */
+    height: 100vh; /* 画面の縦幅いっぱい */
+    object-fit: cover; /* 画像を歪ませずに画面を埋める */
+    z-index: -1;   /* 他の要素より確実に後ろへ */
 }
 
 .background2 {
