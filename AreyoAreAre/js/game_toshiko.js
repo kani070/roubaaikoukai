@@ -18,7 +18,7 @@ function goToTitle() {
 
 // 𝕏(Twitter)共有用
 function shareOnX() {
-    const text = encodeURIComponent(`寿子さんの思い出「急須」を、のこり${remaining}回で見つけ出したわ！\n#寿子さんの思い出 #ブラウザゲーム`);
+    const text = encodeURIComponent(`寿子さんの思い出「急須」を、のこり${remaining}回で見つけ出したわ！\n#寿子さんの思い出 #あれよあれあれ`);
     const url = encodeURIComponent(window.location.href);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
 }
