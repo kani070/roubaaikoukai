@@ -107,7 +107,7 @@ function showSharePopup() {
 function goToTitle() { location.href = "index.html"; }
 
 function shareOnX() {
-    const text = encodeURIComponent(`芳恵さんの「仁丹」を、のこり${remaining}回で突き止めたわ！\n#芳恵さんの喝 #仁丹`);
+    const text = encodeURIComponent(`芳恵さんの「仁丹」を、のこり${remaining}回で突き止めたわ！\n#芳恵の喝 #あれよあれあれ`);
     const url = encodeURIComponent(window.location.href);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
 }
