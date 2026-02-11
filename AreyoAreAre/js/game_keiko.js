@@ -138,7 +138,7 @@ function playSE(id) {
 }
 
 function shareOnX() {
-    const text = encodeURIComponent(`恵子の問い「オッカムの剃刀」を、のこり${remaining}回で解き明かしたわ。\n#恵子の思考 #ブラウザゲーム`);
+    const text = encodeURIComponent(`恵子の問い「オッカムの剃刀」を、のこり${remaining}回で解き明かしたわ。\n#恵子の思考 #あれよあれあれ`);
     window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
 }
 
