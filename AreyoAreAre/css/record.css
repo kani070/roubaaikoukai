@@ -2,6 +2,7 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
 
 .record-screen {
     width: 100vw; height: 100vh;
+    /* washitsu.png がGitHub上で小文字であることを再確認 */
     background: url("../img/washitsu.png") center/cover no-repeat;
     display: flex; flex-direction: column; align-items: center;
     padding: 20px; box-sizing: border-box;
