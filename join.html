@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,108 +8,116 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/join.css">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
-        </div>
-        <ul>
-            <li><a href="index.html">TOP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contents.html">CONTENTS</a></li>
-            <li><a href="member.html">MEMBER</a></li>
-            <li><a href="shop.html">SHOP</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="nav-join"><a href="join.html" class="active">入会する</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+            </div>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contents.html">CONTENTS</a></li>
+                <li><a href="member.html">MEMBER</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li class="nav-join"><a href="join.html" class="active">入会する</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="join-container reveal">
-    <div class="join-header">
-        <h1>JOIN US</h1>
-        <p class="join-intro">
-            月ものは閉じても、老婆愛好会の門は、常に開かれています。<br>
-            慈愛の精神を持ち、縁側を愛する方をオマちしております。
-        </p>
+    <main class="join-container reveal">
+        <div class="join-header">
+            <h1>JOIN US</h1>
+            <p class="join-intro">
+                月ものは閉じても、老婆愛好会の門は、常に開かれています。<br>
+                慈愛の精神を持ち、縁側を愛する方をオマちしております。
+            </p>
+        </div>
+
+        <div class="oath-section">
+            <h3>老婆愛好会 三箇条</h3>
+            <p>一、階層的成熟</p>
+            <p>二、オマは一日にしてならず</p>
+            <p>三、望む人には誰でも</p>
+        </div>
+
+        <form id="joinForm" class="join-form">
+            <div class="form-group">
+                <label>氏名</label>
+                <input type="text" name="name" placeholder="お名前をご記入ください" required>
+            </div>
+            <div class="form-group">
+                <label>メールアドレス</label>
+                <input type="email" name="email" placeholder="example@domain.com" required>
+            </div>
+            <div class="form-group">
+                <label>志望動悸（任意）</label>
+                <input type="text" name="reason" placeholder="例：縁側の平和を守りたい">
+            </div>
+            <button type="submit" class="btn-submit-join">入会を申請する</button>
+        </form>
+    </main>
+
+    <div id="video-overlay">
+        <video id="joinVideo">
+            <source src="assets/video/join-ceremony.mp4" type="video/mp4">
+        </video>
+        <p class="ceremony-msg">入会儀式 進行中...</p>
     </div>
 
-    <div class="oath-section">
-        <h3>老婆愛好会 三箇条</h3>
-        <p>一、階層的成熟</p>
-        <p>二、オマは一日にしてならず</p>
-        <p>三、望む人には誰でも</p>
-    </div>
-
-    <form id="joinForm" class="join-form">
-        <div class="form-group">
-            <label>氏名</label>
-            <input type="text" name="name" placeholder="お名前をご記入ください" required>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/images/logo.svg" alt="老婆愛好会">
+            </div>
+            <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
         </div>
-        <div class="form-group">
-            <label>メールアドレス</label>
-            <input type="email" name="email" placeholder="example@domain.com" required>
-        </div>
-        <div class="form-group">
-            <label>志望動悸（任意）</label>
-            <input type="text" name="reason" placeholder="例：縁側の平和を守りたい">
-        </div>
-        <button type="submit" class="btn-submit-join">入会を申請する</button>
-    </form>
-</main>
+    </footer>
 
-<div id="video-overlay">
-    <video id="joinVideo">
-        <source src="assets/video/join-ceremony.mp4" type="video/mp4">
-    </video>
-    <p class="ceremony-msg">入会儀式 進行中...</p>
-</div>
+    <script>
+        const joinForm = document.getElementById('joinForm');
+        const videoOverlay = document.getElementById('video-overlay');
+        const joinVideo = document.getElementById('joinVideo');
 
-<footer>
-    <div class="footer-inner">
-        <div class="footer-logo">
-            <img src="assets/images/logo.svg" alt="老婆愛好会">
-        </div>
-        <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
-    </div>
-</footer>
+        joinForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-<script>
-    const joinForm = document.getElementById('joinForm');
-    const videoOverlay = document.getElementById('video-overlay');
-    const joinVideo = document.getElementById('joinVideo');
-
-    joinForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // 儀式開始
-        videoOverlay.style.display = 'flex';
-        joinVideo.play().catch(error => {
-            console.log("動画の再生に失敗しました（ユーザー操作不足など）:", error);
-            // 動画がない場合や再生エラー時の予備処理をここに追加可能
+            // 儀式開始
+            videoOverlay.style.display = 'flex';
+            joinVideo.play().catch(error => {
+                console.log("動画の再生に失敗しました（ユーザー操作不足など）:", error);
+                // 動画がない場合や再生エラー時の予備処理をここに追加可能
+            });
         });
-    });
 
-    joinVideo.addEventListener('ended', function() {
-        videoOverlay.innerHTML = `
+        joinVideo.addEventListener('ended', function () {
+            videoOverlay.innerHTML = `
             <div class="completion-content">
                 <h2 style="color:#d4af37; font-size:3rem; font-family:serif; letter-spacing:0.2em; margin-bottom:20px;">入会を許可します</h2>
                 <p style="letter-spacing:0.2em; margin-bottom:40px;">あなたは今日から、老婆愛好会の一員です。</p>
                 <a href="index.html" style="color:#fff; border:1px solid #fff; padding:15px 40px; text-decoration:none; font-size:0.8rem; letter-spacing:0.2em; transition:0.3s;" onmouseover="this.style.background='#fff'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#fff';">TOPへ戻る</a>
             </div>
         `;
-    });
-
-    // スクロールアニメーション
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
         });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+
+        // スクロールアニメーション
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+    <script src="assets/js/common.js"></script>
 
 </body>
+
 </html>
