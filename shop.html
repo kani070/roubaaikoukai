@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,214 +8,222 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/shop.css">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+            </div>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contents.html">CONTENTS</a></li>
+                <li><a href="member.html">MEMBER</a></li>
+                <li><a href="shop.html" class="active">SHOP</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+                <li class="nav-cart">
+                    <a href="cart.html">
+                        <img src="assets/images/cart.svg" alt="CART">
+                        <span class="cart-count">0</span> </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <div class="shop-hero-content reveal">
+                <span class="brand-sub">Wellness Brand</span>
+                <h1 class="brand-logo">
+                    <img src="assets/images/shop/BA_BATH.svg" alt="BA・BATH">
+                </h1>
+                <p class="brand-copy">時を重ねるほどに、潤う。老婆の知恵を、あなたの肌へ。</p>
+            </div>
+        </section>
+
+        <section class="brand-story container">
+            <div class="story-inner reveal">
+                <h2>BRAND STORY</h2>
+                <p>
+                    「BA・BATH」は、老婆愛好会が贈るウェルネスブランドです。<br>
+                    古来より縁側で語り継がれてきた薬草の知恵と、現代の皮膚科学を融合。<br>
+                    シワを隠すのではなく、刻まれた時間を慈しむためのバスタイムを提案します。
+                </p>
+            </div>
+        </section>
+
+        <section class="product-section container">
+            <div class="section-title reveal">
+                <h2>PRODUCTS</h2>
+                <span>商品一覧</span>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/item-onion.jpg" alt="玉ねぎヘアータオルキャップ">
+                        <span class="tag">BEST SELLER</span>
+                    </div>
+                    <div class="product-detail">
+                        <h3>玉ねぎヘアータオルキャップ</h3>
+                        <p class="price">¥2,000 <span class="tax">tax in</span></p>
+                        <p class="desc">被るだけで誰もがおばあちゃんスタイルに。吸水性抜群のマイクロファイバー製。</p>
+                        <a href="shop-detail.html?id=onion" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/massager.jpg" alt="玉ねぎヘアー型スカルプブラシ">
+                        <span class="tag">NEW</span>
+                    </div>
+                    <div class="product-detail">
+                        <h3>玉ねぎ型スカルプブラシ「揉み出しの境地」</h3>
+                        <p class="price">¥1,400 <span class="tax">tax in</span></p>
+                        <p class="desc">伝統的な「玉ねぎヘア」を模したブラシ。熟練の指先のような弾力で頭皮をほぐします。</p>
+                        <a href="shop-detail.html?id=massager" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/bathbomb.jpg" alt="「あ〜爽快！」からだ洗浄剤">
+                        <span class="tag">NEW</span>
+                    </div>
+                    <div class="product-detail">
+                        <h3>「あ〜爽快！」からだ洗浄剤</h3>
+                        <p class="price">¥1,200 <span class="tax">tax in</span></p>
+                        <p class="desc">入れ歯洗浄剤風のパッケージが目印。20錠の発泡入浴剤が、一日の疲れをシュワっと洗浄します。</p>
+                        <a href="shop-detail.html?id=bathbomb" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/item-teeth.jpg" alt="入れ歯ヘアクリップ">
+                    </div>
+                    <div class="product-detail">
+                        <h3>入れ歯ヘアクリップ（白磁仕立て）</h3>
+                        <p class="price">¥1,300 <span class="tax">tax in</span></p>
+                        <p class="desc">精巧に作られた義歯デザイン。髪をガッチリと「噛んで」離しません。</p>
+                        <a href="shop-detail.html?id=teeth" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/yukata.jpg" alt="郷愁の浴衣風バスローブ">
+                    </div>
+                    <div class="product-detail">
+                        <h3>郷愁の祖母の浴衣風婆スローブ</h3>
+                        <p class="price">¥4,800 <span class="tax">tax in</span></p>
+                        <p class="desc">浴衣を彷彿とさせるタオル地。湯上がりの肌をやさしく包みます。</p>
+                        <a href="shop-detail.html?id=yukata" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/item-duck.jpg" alt="アヒル長老">
+                        <span class="tag status">FEW LEFT</span>
+                    </div>
+                    <div class="product-detail">
+                        <h3>アヒル長老（お風呂の守護神）</h3>
+                        <p class="price">¥800 <span class="tax">tax in</span></p>
+                        <p class="desc">お団子が象徴的な湯船の主。見守られるだけで湯冷めしないという噂も。</p>
+                        <a href="shop-detail.html?id=duck" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/oke.jpg" alt="BA・BATH 特製風呂桶">
+                    </div>
+                    <div class="product-detail">
+                        <h3>BA・BATH 特製風呂桶(檜仕立て)</h3>
+                        <p class="price">¥5,500 <span class="tax">tax in</span></p>
+                        <p class="desc">ブランドロゴが底面に刻印された逸品。お湯を汲むたび、心に平穏が訪れます。</p>
+                        <a href="shop-detail.html?id=oke" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/item-towel.jpg" alt="垂れ乳フェイスタオル">
+                    </div>
+                    <div class="product-detail">
+                        <h3>垂れ乳タオル「重力への賛歌」</h3>
+                        <p class="price">¥1,800 <span class="tax">tax in</span></p>
+                        <p class="desc">抗わない美しさを表現したデザイン。非常に「長く」愛用いただける逸品です。</p>
+                        <a href="shop-detail.html?id=towel" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/hairbrush.jpg" alt="老婆の慈愛 パドルブラシ">
+                    </div>
+                    <div class="product-detail">
+                        <h3>老婆の慈愛 万倍かんざしパドルブラシ</h3>
+                        <p class="price">¥2,000 <span class="tax">tax in</span></p>
+                        <p class="desc">おばあちゃんのかんざしがこんなにいっぱい！頭皮のツボを心得た深いマッサージを。</p>
+                        <a href="shop-detail.html?id=hairbrush" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/item-mask.jpg" alt="エイジングマスク">
+                    </div>
+                    <div class="product-detail">
+                        <h3>BA・BATH エイジングマスク</h3>
+                        <p class="price">¥1,200 <span class="tax">tax in</span></p>
+                        <p class="desc">若返るのではなく「老い」を体験する逆転の発想。深い慈愛に目覚めます。</p>
+                        <a href="shop-detail.html?id=mask" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="product-item reveal">
+                    <div class="product-img">
+                        <img src="assets/images/shop/Mirror.jpg" alt="叡智のシワ体験鏡">
+                    </div>
+                    <div class="product-detail">
+                        <h3>叡智のシワ体験鏡「未来視」</h3>
+                        <p class="price">¥1,800 <span class="tax">tax in</span></p>
+                        <p class="desc">覗き込むだけで顔がシワクチャに。あなたの未来の美を先取りする鏡です。</p>
+                        <a href="shop-detail.html?id=mirror" class="btn-view">DETAILS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/images/logo.svg" alt="老婆愛好会">
+            </div>
+            <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
         </div>
-        <ul>
-            <li><a href="index.html">TOP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contents.html">CONTENTS</a></li>
-            <li><a href="member.html">MEMBER</a></li>
-            <li><a href="shop.html" class="active">SHOP</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
-            <li class="nav-cart">
-                <a href="cart.html">
-                    <img src="assets/images/cart.svg" alt="CART">
-                    <span class="cart-count">0</span> </a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    </footer>
 
-<main>
-    <section class="shop-hero">
-        <div class="shop-hero-content reveal">
-            <span class="brand-sub">Wellness Brand</span>
-            <h1 class="brand-logo">
-                <img src="assets/images/shop/BA_BATH.svg" alt="BA・BATH">
-            </h1>
-            <p class="brand-copy">時を重ねるほどに、潤う。老婆の知恵を、あなたの肌へ。</p>
-        </div>
-    </section>
-
-    <section class="brand-story container">
-        <div class="story-inner reveal">
-            <h2>BRAND STORY</h2>
-            <p>
-                「BA・BATH」は、老婆愛好会が贈るウェルネスブランドです。<br>
-                古来より縁側で語り継がれてきた薬草の知恵と、現代の皮膚科学を融合。<br>
-                シワを隠すのではなく、刻まれた時間を慈しむためのバスタイムを提案します。
-            </p>
-        </div>
-    </section>
-
-    <section class="product-section container">
-        <div class="section-title reveal">
-            <h2>PRODUCTS</h2>
-            <span>商品一覧</span>
-        </div>
-
-        <div class="product-grid">
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/item-onion.jpg" alt="玉ねぎヘアータオルキャップ">
-                    <span class="tag">BEST SELLER</span>
-                </div>
-                <div class="product-detail">
-                    <h3>玉ねぎヘアータオルキャップ</h3>
-                    <p class="price">¥2,000 <span class="tax">tax in</span></p>
-                    <p class="desc">被るだけで誰もがおばあちゃんスタイルに。吸水性抜群のマイクロファイバー製。</p>
-                    <a href="shop-detail.html?id=onion" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/massager.jpg" alt="玉ねぎヘアー型スカルプブラシ">
-                    <span class="tag">NEW</span>
-                </div>
-                <div class="product-detail">
-                    <h3>玉ねぎ型スカルプブラシ「揉み出しの境地」</h3>
-                    <p class="price">¥1,400 <span class="tax">tax in</span></p>
-                    <p class="desc">伝統的な「玉ねぎヘア」を模したブラシ。熟練の指先のような弾力で頭皮をほぐします。</p>
-                    <a href="shop-detail.html?id=massager" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/bathbomb.jpg" alt="「あ〜爽快！」からだ洗浄剤">
-                    <span class="tag">NEW</span>
-                </div>
-                <div class="product-detail">
-                    <h3>「あ〜爽快！」からだ洗浄剤</h3>
-                    <p class="price">¥1,200 <span class="tax">tax in</span></p>
-                    <p class="desc">入れ歯洗浄剤風のパッケージが目印。20錠の発泡入浴剤が、一日の疲れをシュワっと洗浄します。</p>
-                    <a href="shop-detail.html?id=bathbomb" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/item-teeth.jpg" alt="入れ歯ヘアクリップ">
-                </div>
-                <div class="product-detail">
-                    <h3>入れ歯ヘアクリップ（白磁仕立て）</h3>
-                    <p class="price">¥1,300 <span class="tax">tax in</span></p>
-                    <p class="desc">精巧に作られた義歯デザイン。髪をガッチリと「噛んで」離しません。</p>
-                    <a href="shop-detail.html?id=teeth" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/yukata.jpg" alt="郷愁の浴衣風バスローブ">
-                </div>
-                <div class="product-detail">
-                    <h3>郷愁の祖母の浴衣風婆スローブ</h3>
-                    <p class="price">¥4,800 <span class="tax">tax in</span></p>
-                    <p class="desc">浴衣を彷彿とさせるタオル地。湯上がりの肌をやさしく包みます。</p>
-                    <a href="shop-detail.html?id=yukata" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/item-duck.jpg" alt="アヒル長老">
-                    <span class="tag status">FEW LEFT</span>
-                </div>
-                <div class="product-detail">
-                    <h3>アヒル長老（お風呂の守護神）</h3>
-                    <p class="price">¥800 <span class="tax">tax in</span></p>
-                    <p class="desc">お団子が象徴的な湯船の主。見守られるだけで湯冷めしないという噂も。</p>
-                    <a href="shop-detail.html?id=duck" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/oke.jpg" alt="BA・BATH 特製風呂桶">
-                </div>
-                <div class="product-detail">
-                    <h3>BA・BATH 特製風呂桶(檜仕立て)</h3>
-                    <p class="price">¥5,500 <span class="tax">tax in</span></p>
-                    <p class="desc">ブランドロゴが底面に刻印された逸品。お湯を汲むたび、心に平穏が訪れます。</p>
-                    <a href="shop-detail.html?id=oke" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/item-towel.jpg" alt="垂れ乳フェイスタオル">
-                </div>
-                <div class="product-detail">
-                    <h3>垂れ乳タオル「重力への賛歌」</h3>
-                    <p class="price">¥1,800 <span class="tax">tax in</span></p>
-                    <p class="desc">抗わない美しさを表現したデザイン。非常に「長く」愛用いただける逸品です。</p>
-                    <a href="shop-detail.html?id=towel" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/hairbrush.jpg" alt="老婆の慈愛 パドルブラシ">
-                </div>
-                <div class="product-detail">
-                    <h3>老婆の慈愛 万倍かんざしパドルブラシ</h3>
-                    <p class="price">¥2,000 <span class="tax">tax in</span></p>
-                    <p class="desc">おばあちゃんのかんざしがこんなにいっぱい！頭皮のツボを心得た深いマッサージを。</p>
-                    <a href="shop-detail.html?id=hairbrush" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/item-mask.jpg" alt="エイジングマスク">
-                </div>
-                <div class="product-detail">
-                    <h3>BA・BATH エイジングマスク</h3>
-                    <p class="price">¥1,200 <span class="tax">tax in</span></p>
-                    <p class="desc">若返るのではなく「老い」を体験する逆転の発想。深い慈愛に目覚めます。</p>
-                    <a href="shop-detail.html?id=mask" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-
-            <div class="product-item reveal">
-                <div class="product-img">
-                    <img src="assets/images/shop/mirror.jpg" alt="叡智のシワ体験鏡">
-                </div>
-                <div class="product-detail">
-                    <h3>叡智のシワ体験鏡「未来視」</h3>
-                    <p class="price">¥1,800 <span class="tax">tax in</span></p>
-                    <p class="desc">覗き込むだけで顔がシワクチャに。あなたの未来の美を先取りする鏡です。</p>
-                    <a href="shop-detail.html?id=mirror" class="btn-view">DETAILS</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-logo">
-            <img src="assets/images/logo.svg" alt="老婆愛好会">
-        </div>
-        <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
-    </div>
-</footer>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+    <script src="assets/js/common.js"></script>
 </body>
+
 </html>
