@@ -12,12 +12,6 @@ body {
 
 body.loading { overflow: hidden; }
 
-/* 改行コントロール */
-.sp-only { display: none; }
-@media screen and (max-width: 768px) {
-    .sp-only { display: block; }
-}
-
 /* --- Opening Animation --- */
 #loader {
     position: fixed;
@@ -37,13 +31,11 @@ body.loading { overflow: hidden; }
 }
 
 .loader-copy {
-    font-size: 1.2rem;
-    letter-spacing: 0.3em;
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
     color: #1a1a1a;
     animation: textFadeIn 1.5s ease forwards;
     opacity: 0;
-    padding: 0 20px;
-    text-align: center;
 }
 
 @keyframes textFadeIn {
@@ -56,7 +48,7 @@ header {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #f0f0f0;
-    padding: 15px 0;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -69,17 +61,21 @@ header nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
+/* --- Header Logo Style --- */
 .logo img {
-    height: 40px;
+    height: 50px; /* ロゴの高さに合わせて調整してください */
     width: auto;
     display: block;
     transition: opacity 0.3s;
 }
 
-/* PC Navigation */
+.logo a:hover img {
+    opacity: 0.7; /* ホバー時に少し薄くして反応を示す */
+}
+
 header nav ul {
     display: flex;
     list-style: none;
@@ -87,129 +83,59 @@ header nav ul {
     align-items: center;
 }
 
-header nav ul li { margin-left: 25px; }
+header nav ul li { margin-left: 30px; }
 
+/* --- Header Navigation Hover Effect --- */
 header nav ul li a {
     text-decoration: none;
-    color: #666;
-    font-size: 0.8rem;
+    color: #666; /* 通常時は少し薄いグレー */
+    font-size: 0.85rem;
     letter-spacing: 0.1em;
     padding: 5px 0;
-    position: relative;
+    position: relative; /* 下線の基準点 */
     transition: color 0.3s ease;
 }
 
+/* ホバー時とアクティブ時の文字色 */
 header nav ul li a:hover,
 header nav ul li a.active {
-    color: #1a1a1a;
+    color: #1a1a1a; /* 漆黒に変化 */
 }
 
+/* 下線の土台 */
 header nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: #1a1a1a;
-    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    bottom: 0;
+    left: 0;
+    width: 0;      /* 初期状態は幅ゼロ */
+    height: 1px;   /* 1pxの極細線 */
+    background: #1a1a1a; /* 線の色は文字と同じ漆黒 */
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1); /* 高級感のある動き */
 }
 
-header nav ul li a:hover::after,
+/* マウスを乗せた時に線を100%にする */
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 現在のページの時は常に線を表示しておく */
 header nav ul li a.active::after {
     width: 100%;
 }
 
+
+/* 入会ボタン（ミニマルデザイン） */
 .btn-join {
     background: #1a1a1a;
     color: #fff !important;
-    padding: 8px 20px;
-    font-size: 0.75rem;
+    padding: 10px 25px;
+    border-radius: 0; /* 角を立たせて洗練 */
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 
-/* --- Mobile Menu Trigger --- */
-.menu-trigger {
-    display: none;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    cursor: pointer;
-    z-index: 2000;
-}
-
-.menu-trigger span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: #1a1a1a;
-    transition: all 0.4s;
-}
-
-.menu-trigger span:nth-child(1) { top: 0; }
-.menu-trigger span:nth-child(2) { top: 50%; }
-.menu-trigger span:nth-child(3) { bottom: 0; }
-
-.menu-trigger.open span:nth-child(1) { transform: translateY(11px) rotate(-45deg); }
-.menu-trigger.open span:nth-child(2) { opacity: 0; }
-.menu-trigger.open span:nth-child(3) { transform: translateY(-12px) rotate(45deg); }
-
-/* --- Responsive Layout (Tablet & Mobile) --- */
-@media screen and (max-width: 1024px) {
-    header nav ul li { margin-left: 15px; }
-    #hero h1 { font-size: 2.8rem; }
-}
-
-@media screen and (max-width: 768px) {
-    .menu-trigger { display: block; }
-
-    header nav ul {
-        position: fixed;
-        top: 0; right: -100%;
-        width: 100%; height: 100vh;
-        background: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 1500;
-    }
-
-    header nav ul.open { right: 0; }
-
-    header nav ul li {
-        margin: 20px 0;
-    }
-
-    header nav ul li a {
-        font-size: 1.2rem;
-    }
-
-    /* Hero Responsive */
-    #hero h1 {
-        font-size: 2rem;
-        left: 0;
-        letter-spacing: 0.1em;
-    }
-
-    .en-title { font-size: 0.75rem; letter-spacing: 0.3em; }
-    #hero p { font-size: 0.9rem; padding: 0 20px; }
-
-    /* News Responsive */
-    .container { margin: 80px auto; }
-    .news-list li a {
-        flex-direction: column;
-        padding: 20px 5px;
-    }
-    .news-list li .date {
-        width: 100%;
-        margin-bottom: 5px;
-        font-size: 0.8rem;
-    }
-    .news-list li .txt {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-}
+.btn-join:hover { background: #444; }
 
 /* --- Hero Section --- */
 #hero {
@@ -221,22 +147,37 @@ header nav ul li a.active::after {
     overflow: hidden;
 }
 
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+
+    /* --- ここを追加 --- */
+    position: relative; 
+    left: 30px;  /* 右に 20px 動かしたい場合 */
+    /* left: -20px; にすれば左に動きます */
+}
+
 .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: url('../images/peace.jpg') center/cover no-repeat;
-    filter: grayscale(30%);
+    filter: grayscale(30%); /* 少し彩度を落として高級感を */
     transform: scale(1.1);
     animation: heroZoom 10s ease-out forwards;
 }
 
-@keyframes heroZoom { to { transform: scale(1); } }
+@keyframes heroZoom {
+    to { transform: scale(1); }
+}
 
 #hero::after {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.2);
 }
 
 .hero-content {
@@ -245,22 +186,34 @@ header nav ul li a.active::after {
     text-align: center;
 }
 
+.en-title {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.5em;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
 #hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     color: #1a1a1a;
     font-weight: normal;
     letter-spacing: 0.2em;
-    position: relative;
-    left: 30px;
+}
+
+#hero p {
+    font-size: 1rem;
+    color: #333;
+    letter-spacing: 0.1em;
 }
 
 /* --- News Section --- */
 .container { max-width: 900px; margin: 120px auto; padding: 0 20px; }
 
 .section-title { text-align: center; margin-bottom: 60px; }
-.section-title h2 { font-size: 1.5rem; letter-spacing: 0.2em; margin-bottom: 10px; }
-.section-title span { color: #999; font-size: 0.75rem; }
+.section-title h2 { font-size: 1.8rem; letter-spacing: 0.3em; margin-bottom: 10px; }
+.section-title span { color: #999; font-size: 0.8rem; }
 
 .news-list { list-style: none; padding: 0; border-top: 1px solid #eee; }
 .news-list li { border-bottom: 1px solid #eee; }
@@ -273,16 +226,16 @@ header nav ul li a.active::after {
 }
 
 .news-list li a:hover { background: #fcfcfc; color: #999; }
-.news-list li .date { width: 150px; font-family: sans-serif; font-size: 0.85rem; color: #999; }
+.news-list li .date { width: 150px; font-family: sans-serif; font-size: 0.9rem; color: #999; }
 
 .view-more { text-align: center; margin-top: 40px; }
 .view-more a {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #1a1a1a;
     text-decoration: none;
     border-bottom: 1px solid #1a1a1a;
     padding-bottom: 5px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
 }
 
 /* --- Reveal Animation --- */
@@ -297,20 +250,133 @@ header nav ul li a.active::after {
     transform: translateY(0);
 }
 
+
 /* --- Footer --- */
 footer {
     background: #1a1a1a;
     color: #fff;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
-.footer-logo { margin-bottom: 20px; }
+/* --- Footer Logo Style --- */
+.footer-logo {
+    margin-bottom: 30px;
+}
+
 .footer-logo img {
-    height: 35px;
+    height: 40px; /* フッターロゴは少し大きめに */
     width: auto;
-    filter: brightness(0) invert(1);
+    margin: 0 auto;
+    /* 黒背景でロゴを白く見せる魔法の1行 */
+    filter: brightness(0) invert(1); 
     opacity: 0.8;
 }
 
-.copyright { font-size: 0.65rem; color: #666; }
+.copyright { font-size: 0.7rem; color: #666; }
+/* --- Mobile Menu Toggle --- */
+.menu-trigger {
+    display: none; /* デスクトップでは非表示 */
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-trigger span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #1a1a1a;
+}
+
+.menu-trigger span:nth-of-type(1) { top: 0; }
+.menu-trigger span:nth-of-type(2) { top: 11px; }
+.menu-trigger span:nth-of-type(3) { bottom: 0; }
+
+/* ハンバーガーアニメーション (Open時) */
+.menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(11px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 1024px) {
+    header nav { padding: 0 20px; }
+    header nav ul li { margin-left: 20px; }
+}
+
+@media (max-width: 768px) {
+    /* ロード画面の文字サイズ */
+    .loader-copy { font-size: 1.1rem; letter-spacing: 0.3em; }
+
+    /* ハンバーガー表示 */
+    .menu-trigger { display: block; }
+
+    /* メニューを全画面オーバーレイに */
+    header nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 初期は画面外 */
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.5s ease;
+        z-index: 1000;
+    }
+
+    header nav ul.active {
+        right: 0; /* 表示 */
+    }
+
+    header nav ul li {
+        margin: 20px 0;
+    }
+
+    header nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    /* Heroセクション */
+    #hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.1em;
+        left: 0; /* モバイルでは中央寄せにするためオフセット解除 */
+        padding: 0 10px;
+    }
+
+    .en-title { font-size: 0.75rem; }
+    #hero p { font-size: 0.9rem; padding: 0 20px; }
+
+    /* Newsセクション */
+    .container { margin: 80px auto; }
+    .news-list li a {
+        flex-direction: column; /* 日付とタイトルを縦並びに */
+        padding: 20px 5px;
+    }
+
+    .news-list li .date {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+
+    .news-list li .txt {
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer { padding: 60px 0; }
+}
