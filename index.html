@@ -4,7 +4,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>老婆愛好会 | Official Website</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        @charset "UTF-8";
+
+        /* --- Base Setting --- */
+        body {
+            font-family: "Yu Mincho", "MS Mincho", serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body.loading { overflow: hidden; }
+
+        /* --- Opening Animation --- */
+        #loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #fff;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.5s ease, visibility 1.5s;
+        }
+
+        #loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-copy {
+            font-size: 1.2rem;
+            letter-spacing: 0.5em;
+            color: #1a1a1a;
+            animation: textFadeIn 1.5s ease forwards;
+            opacity: 0;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        @keyframes textFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Header --- */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        /* ハンバーガーメニューボタン（スマホ用） */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 1px;
+            background-color: #1a1a1a;
+            transition: 0.3s;
+        }
+
+        /* PCメニュー */
+        header nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0; padding: 0;
+            align-items: center;
+        }
+
+        header nav ul li { margin-left: 25px; }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            color: #1a1a1a;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: #1a1a1a;
+            transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        header nav ul li a:hover::after,
+        header nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .btn-join {
+            background: #1a1a1a;
+            color: #fff !important;
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('assets/images/peace.jpg') center/cover no-repeat;
+            background-color: #eee; /* 画像がない場合の背景色 */
+            filter: grayscale(30%);
+            transform: scale(1.1);
+            animation: heroZoom 10s ease-out forwards;
+        }
+
+        @keyframes heroZoom {
+            to { transform: scale(1); }
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .en-title {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        #hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: normal;
+            letter-spacing: 0.2em;
+            line-height: 1.4;
+        }
+
+        #hero p {
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            color: #333;
+            letter-spacing: 0.1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- News Section --- */
+        .container { max-width: 900px; margin: 80px auto; padding: 0 20px; }
+
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 1.5rem; letter-spacing: 0.3em; margin-bottom: 10px; }
+        .section-title span { color: #999; font-size: 0.75rem; }
+
+        .news-list { list-style: none; padding: 0; border-top: 1px solid #eee; }
+        .news-list li { border-bottom: 1px solid #eee; }
+        .news-list li a {
+            display: flex;
+            padding: 20px 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s;
+        }
+
+        .news-list li a:hover { background: #fcfcfc; color: #999; }
+        .news-list li .date { width: 120px; flex-shrink: 0; font-family: sans-serif; font-size: 0.85rem; color: #999; }
+        .news-list li .txt { font-size: 0.9rem; flex-grow: 1; }
+
+        .view-more { text-align: center; margin-top: 40px; }
+        .view-more a {
+            font-size: 0.75rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 5px;
+            letter-spacing: 0.2em;
+        }
+
+        /* --- Reveal Animation --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1.5s all ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .footer-logo { margin-bottom: 20px; }
+        .footer-logo img {
+            height: 35px;
+            width: auto;
+            margin: 0 auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        .copyright { font-size: 0.65rem; color: #666; }
+
+        /* --- Media Queries (Tablet & Smartphone) --- */
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            
+            header nav ul {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 80%; height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.5s;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+            }
+
+            header nav ul.open { right: 0; }
+            header nav ul li { margin: 20px 0; }
+            header nav ul li a { font-size: 1.1rem; }
+
+            .news-list li a { flex-direction: column; }
+            .news-list li .date { margin-bottom: 5px; }
+
+            .container { margin: 60px auto; }
+            
+            /* ヒーロータイトルの微調整 */
+            #hero h1 { left: 0 !important; } 
+        }
+    </style>
 </head>
 <body class="loading">
 
@@ -21,7 +315,14 @@
                 <img src="assets/images/logo.svg" alt="老婆愛好会">
             </a>
         </div>
-        <ul>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="nav-list">
             <li><a href="index.html" class="active">TOP</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="contents.html">CONTENTS</a></li>
@@ -52,7 +353,7 @@
             <li><a href="#"><span class="date">2026.01.05</span> <span class="txt">新作ゲーム『あれよあれあれ』事前登録開始</span></a></li>
             <li><a href="#"><span class="date">2025.12.25</span> <span class="txt">【イベント】コシイテーナ爆誕祭 開催決定</span></a></li>
             <li><a href="#"><span class="date">2025.10.45</span> <span class="txt">祖母井寿子氏 米寿（88歳）記念式典のご案内</span></a></li>
-			<li><a href="#"><span class="date">2024.12.01</span> <span class="txt">「師走にシワ吸う」キャンペーン開催</span></a></li>
+            <li><a href="#"><span class="date">2024.12.01</span> <span class="txt">「師走にシワ吸う」キャンペーン開催</span></a></li>
             <li><a href="#"><span class="date">2024.09.15</span> <span class="txt">日本講堂集会：知恵の継承プロジェクト</span></a></li>
             <li><a href="#"><span class="date">2024.04.08</span> <span class="txt">「シワの日」記念チャリティオークション開催</span></a></li>
         </ul>
@@ -78,10 +379,30 @@
             const loader = document.getElementById('loader');
             loader.classList.add('fade-out');
             document.body.classList.remove('loading');
-        }, 2000); // 2秒間コピーを表示
+        }, 2000); 
     });
 
-    // 2. スクロールでふわっと表示（Reveal Animation）
+    // 2. スマホメニュー開閉
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('open');
+        // ハンバーガーを×に変えるアニメーション用
+        const spans = menuToggle.getElementsByTagName('span');
+        menuToggle.classList.toggle('active');
+        if(navList.classList.contains('open')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+
+    // 3. スクロールでふわっと表示（Reveal Animation）
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
