@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,153 +8,171 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+            </div>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contents.html" class="active">CONTENTS</a></li>
+                <li><a href="member.html">MEMBER</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <span class="en-title reveal">PORTRAITS</span>
+            <h1 class="reveal">ILLUSTRATION GALLERY</h1>
+            <p class="reveal">慈愛と叡智の肖像</p>
         </div>
-        <ul>
-            <li><a href="index.html">TOP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contents.html" class="active">CONTENTS</a></li>
-            <li><a href="member.html">MEMBER</a></li>
-            <li><a href="shop.html">SHOP</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <div class="page-header">
-        <span class="en-title reveal">PORTRAITS</span>
-        <h1 class="reveal">ILLUSTRATION GALLERY</h1>
-        <p class="reveal">慈愛と叡智の肖像</p>
-    </div>
+        <section class="container">
+            <div class="gallery-grid">
 
-    <section class="container">
-        <div class="gallery-grid">
-            
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/toshi.jpg', '昇展', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/toshi.jpg" alt="昇展">
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/toshi.jpg', '昇展', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/toshi.jpg" alt="昇展">
+                    </div>
+                    <div class="art-info">
+                        <h3>昇展</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
                 </div>
-                <div class="art-info">
-                    <h3>昇展</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
 
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/newyear.PNG', '一夫人 ニ多芳 三グラニー', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/newyear.PNG" alt="一夫人 ニ多芳 三グラニー">
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/newyear.PNG', '一夫人 ニ多芳 三グラニー', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/newyear.PNG" alt="一夫人 ニ多芳 三グラニー">
+                    </div>
+                    <div class="art-info">
+                        <h3>一夫人 ニ多芳 三グラニー</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
                 </div>
-                <div class="art-info">
-                    <h3>一夫人 ニ多芳 三グラニー</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
 
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/kiss.PNG', 'キッシング・グラニー', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/kiss.PNG" alt="キッシング・グラニー">
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/kiss.PNG', 'キッシング・グラニー', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/kiss.PNG" alt="キッシング・グラニー">
+                    </div>
+                    <div class="art-info">
+                        <h3>キッシング・グラニー</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
                 </div>
-                <div class="art-info">
-                    <h3>キッシング・グラニー</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-            
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/meido.PNG', '冥土喫茶', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/meido.PNG" alt="冥土喫茶">
-                </div>
-                <div class="art-info">
-                    <h3>冥土喫茶</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-                 
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/pool.PNG', 'Instagrandma', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/pool.PNG" alt="Instagrandma">
-                </div>
-                <div class="art-info">
-                    <h3>Instagrandma</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-                 
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/vb.PNG', 'Vチュー婆ー', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/vb.PNG" alt="Vチュー婆ー">
-                </div>
-                <div class="art-info">
-                    <h3>Vチュー婆ー</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-            
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/asobo.PNG', '祖母とあそぼ', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/asobo.PNG" alt="祖母とあそぼ">
-                </div>
-                <div class="art-info">
-                    <h3>祖母とあそぼ</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-                 
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/yuri.PNG', 'グ老婆ル', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/yuri.PNG" alt="グ老婆ル">
-                </div>
-                <div class="art-info">
-                    <h3>グ老婆ル</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-            
-            <div class="gallery-item reveal" onclick="openModal('assets/images/gallery/gold.JPG', 'ゴールデングランマ', '絵師：老人 耄人')">
-                <div class="art-wrapper">
-                    <img src="assets/images/gallery/gold.JPG" alt="ゴールデングランマ">
-                </div>
-                <div class="art-info">
-                    <h3>ゴールデングランマ</h3>
-                    <p>絵師：老人 耄人</p>
-                </div>
-            </div>
-        
-        </div> </section>
-</main>
 
-<div id="artModal" class="modal" onclick="closeModal()">
-    <span class="modal-close">&times;</span>
-    <div class="modal-inner">
-        <img class="modal-content" id="modalImg">
-        <div id="modalCaption" class="modal-caption"></div>
-    </div>
-</div>
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/meido.PNG', '冥土喫茶', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/meido.PNG" alt="冥土喫茶">
+                    </div>
+                    <div class="art-info">
+                        <h3>冥土喫茶</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
 
-<footer>
-    <div class="footer-inner">
-        <div class="footer-logo">
-            <img src="assets/images/logo.svg" alt="老婆愛好会">
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/pool.PNG', 'Instagrandma', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/pool.PNG" alt="Instagrandma">
+                    </div>
+                    <div class="art-info">
+                        <h3>Instagrandma</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/vb.PNG', 'Vチュー婆ー', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/vb.PNG" alt="Vチュー婆ー">
+                    </div>
+                    <div class="art-info">
+                        <h3>Vチュー婆ー</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/asobo.PNG', '祖母とあそぼ', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/asobo.PNG" alt="祖母とあそぼ">
+                    </div>
+                    <div class="art-info">
+                        <h3>祖母とあそぼ</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/yuri.PNG', 'グ老婆ル', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/yuri.PNG" alt="グ老婆ル">
+                    </div>
+                    <div class="art-info">
+                        <h3>グ老婆ル</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal"
+                    onclick="openModal('assets/images/gallery/gold.jpg', 'ゴールデングランマ', '絵師：老人 耄人')">
+                    <div class="art-wrapper">
+                        <img src="assets/images/gallery/gold.JPG" alt="ゴールデングランマ">
+                    </div>
+                    <div class="art-info">
+                        <h3>ゴールデングランマ</h3>
+                        <p>絵師：老人 耄人</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="artModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <div class="modal-inner">
+            <img class="modal-content" id="modalImg">
+            <div id="modalCaption" class="modal-caption"></div>
         </div>
-        <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
     </div>
-</footer>
 
-<script src="assets/js/gallery.js"></script>
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/images/logo.svg" alt="老婆愛好会">
+            </div>
+            <p class="copyright">&copy; 2026 Rouba Aikoukai All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/gallery.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+    <script src="assets/js/common.js"></script>
 </body>
+
 </html>
