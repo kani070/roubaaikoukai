@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,115 +8,123 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/contact.css">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
-        </div>
-        <ul>
-            <li><a href="index.html">TOP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contents.html">CONTENTS</a></li>
-            <li><a href="member.html">MEMBER</a></li>
-            <li><a href="shop.html">SHOP</a></li>
-            <li><a href="contact.html" class="active">CONTACT</a></li>
-            <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.svg" alt="老婆愛好会"></a>
+            </div>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contents.html">CONTENTS</a></li>
+                <li><a href="member.html">MEMBER</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+                <li class="nav-join"><a href="join.html" class="btn-join">入会する</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <div class="page-header reveal">
-        <h1>CONTACT</h1>
-        <p>お問い合わせ・取材依頼</p>
-    </div>
-
-    <section class="container contact-section reveal">
-        <div class="contact-intro">
-            <p>
-                老婆愛好会へのご質問、コラボレーションのご提案、取材・お仕事のご依頼は、以下のフォームよりお気軽にお問い合わせください。<br>
-                事務局（長老）より3営業日以内にご返信いたします。
-            </p>
+    <main>
+        <div class="page-header reveal">
+            <h1>CONTACT</h1>
+            <p>お問い合わせ・取材依頼</p>
         </div>
 
-        <form id="contactForm" class="styled-form">
-            <div class="form-group">
-                <label>お問い合わせ種類 <span>必須</span></label>
-                <select name="type" required>
-                    <option value="">選択してください</option>
-                    <option value="general">一般のお問い合わせ</option>
-                    <option value="interview">取材・メディア掲載について</option>
-                    <option value="collaboration">コラボレーション・仕事依頼</option>
-                    <option value="duel">決闘のお申し込み</option>
-                    <option value="other">その他</option>
-                </select>
+        <section class="container contact-section reveal">
+            <div class="contact-intro">
+                <p>
+                    老婆愛好会へのご質問、コラボレーションのご提案、取材・お仕事のご依頼は、以下のフォームよりお気軽にお問い合わせください。<br>
+                    事務局（長老）より3営業日以内にご返信いたします。
+                </p>
             </div>
 
-            <div class="form-group">
-                <label>お名前 / 貴社名 <span>必須</span></label>
-                <input type="text" name="name" placeholder="例：吉田 こと / 株式会社〇〇" required>
-            </div>
+            <form id="contactForm" class="styled-form">
+                <div class="form-group">
+                    <label>お問い合わせ種類 <span>必須</span></label>
+                    <select name="type" required>
+                        <option value="">選択してください</option>
+                        <option value="general">一般のお問い合わせ</option>
+                        <option value="interview">取材・メディア掲載について</option>
+                        <option value="collaboration">コラボレーション・仕事依頼</option>
+                        <option value="duel">決闘のお申し込み</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label>メールアドレス <span>必須</span></label>
-                <input type="email" name="email" placeholder="example@domain.com" required>
-            </div>
+                <div class="form-group">
+                    <label>お名前 / 貴社名 <span>必須</span></label>
+                    <input type="text" name="name" placeholder="例：吉田 こと / 株式会社〇〇" required>
+                </div>
 
-            <div class="form-group">
-                <label>お問い合わせ内容 <span>必須</span></label>
-                <textarea name="message" rows="8" placeholder="具体的な内容をご記入ください" required></textarea>
-            </div>
+                <div class="form-group">
+                    <label>メールアドレス <span>必須</span></label>
+                    <input type="email" name="email" placeholder="example@domain.com" required>
+                </div>
 
-            <div class="form-submit">
-                <button type="submit" class="btn-submit">送信内容を確認する</button>
-            </div>
-        </form>
-    </section>
+                <div class="form-group">
+                    <label>お問い合わせ内容 <span>必須</span></label>
+                    <textarea name="message" rows="8" placeholder="具体的な内容をご記入ください" required></textarea>
+                </div>
 
-    <section class="container sns-section reveal">
-        <div class="section-title">
-            <h2>OFFICIAL SNS</h2>
-            <span>公式SNS</span>
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit">送信内容を確認する</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="container sns-section reveal">
+            <div class="section-title">
+                <h2>OFFICIAL SNS</h2>
+                <span>公式SNS</span>
+            </div>
+            <div class="sns-icons">
+                <a href="https://x.com/kani_develop" class="sns-link" target="_blank">X (Twitter)</a>
+                <a href="https://www.instagram.com/crseikin/" class="sns-link" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCBP1cGxbhNKnSzpjM8oli3A" class="sns-link"
+                    target="_blank">YouTube</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/images/logo.svg" alt="老婆愛好会">
+            </div>
+            <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
         </div>
-        <div class="sns-icons">
-            <a href="https://x.com/kani_develop" class="sns-link" target="_blank">X (Twitter)</a>
-            <a href="https://www.instagram.com/crseikin/" class="sns-link" target="_blank">Instagram</a>
-            <a href="https://www.youtube.com/channel/UCBP1cGxbhNKnSzpjM8oli3A" class="sns-link" target="_blank">YouTube</a>
-        </div>
-    </section>
-</main>
+    </footer>
 
-<footer>
-    <div class="footer-inner">
-        <div class="footer-logo">
-            <img src="assets/images/logo.svg" alt="老婆愛好会">
-        </div>
-        <p class="copyright">&copy; 2026 BA・BATH / Rouba Aikoukai All Rights Reserved.</p>
-    </div>
-</footer>
+    <script>
+        // スクロールアニメーション（共通）
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
 
-<script>
-    // スクロールアニメーション（共通）
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // フォーム送信時の簡単なアラート（デモ用）
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            const type = e.target.type.value;
+            if (type === 'duel') {
+                alert('決闘のお申し込みを受理しました。場所は追って烏（からす）が伝えます。');
+            } else {
+                alert('お問い合わせありがとうございます。送信されました。');
+            }
         });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // フォーム送信時の簡単なアラート（デモ用）
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
-        const type = e.target.type.value;
-        if(type === 'duel') {
-            alert('決闘のお申し込みを受理しました。場所は追って烏（からす）が伝えます。');
-        } else {
-            alert('お問い合わせありがとうございます。送信されました。');
-        }
-    });
-</script>
-
+    </script>
+    <script src="assets/js/common.js"></script>
 </body>
+
 </html>
