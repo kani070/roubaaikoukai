@@ -1,7 +1,10 @@
-/* 全画面の親要素 */
+@charset "UTF-8";
+
+/* --- 全画面の親要素 --- */
 .game-container {
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* スマホのアドレスバー伸縮による縦ズレ・スクロール発生を防止 */
     position: relative;
     overflow: hidden;
 }
@@ -26,11 +29,11 @@
     align-items: flex-end;
     justify-content: flex-start;
     padding-left: 5%;
-    pointer-events: none; /* クリックを邪魔しない */
+    pointer-events: none; /* クリックを通過させる */
 }
+
 .toshiko-img {
-    height: 130vh; /* 少し大きくして存在感を出す */
-	/* ★ これを追加。10% などの数字を増やすとさらに下がります */
+    height: 130vh;
     transform: translateX(-5%) translateY(20%);
 }
 
@@ -43,21 +46,24 @@
 
 /* 4. 操作UIレイヤー */
 .ui-content-layer {
-	/* 日本語の標準的な明朝体セット */
     font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
     position: absolute;
     inset: 0;
     z-index: 10;
-	pointer-events: none; /* 親レイヤーはクリックを通す */
+    pointer-events: none; /* 親レイヤーはクリックを通す */
 }
 
-.ui-counter, .ui-message, .ui-choices, .wakatta-btn, .q-btn {
+.ui-counter,
+.ui-message,
+.ui-choices,
+.wakatta-btn,
+.q-btn {
     pointer-events: auto; /* ボタン類はクリックできるようにする */
 }
 
-/* ★ 孫のツッコミ用：黄色でイタリック */
+/* 孫のツッコミ用：黄色でイタリック */
 .player-text {
-    color: #ccac00 !important; /* 少し濃い目の黄色（視認性重視） */
+    color: #ccac00 !important;
     font-weight: bold;
     font-style: italic;
 }
@@ -67,7 +73,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
-    display: none; /* 初期状態は非表示 */
+    display: none; /* JSで flex に切り替え */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -80,13 +86,19 @@
     width: 80%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     animation: popupAnim 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes popupAnim {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .share-card h3 {
@@ -97,8 +109,15 @@
     padding-bottom: 10px;
 }
 
-#result-text { font-size: 1.2rem; margin: 20px 0; }
-#result-text strong { font-size: 1.8rem; color: #d32f2f; }
+#result-text {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+#result-text strong {
+    font-size: 1.8rem;
+    color: #d32f2f;
+}
 
 .share-stats {
     background: #f9f9f9;
@@ -124,14 +143,26 @@
     font-size: 1rem;
 }
 
-.x-btn { background: #000; color: white; }
-.title-btn { background: #8d6e63; color: white; }
-.sns-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+.x-btn {
+    background: #000;
+    color: white;
+}
+
+.title-btn {
+    background: #8d6e63;
+    color: white;
+}
+
+.sns-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
 /* のこり回数：画像左上の枠の中に配置 */
 .ui-counter {
     position: absolute;
     top: 5%;
-    left: 8%; /* 画像の「のこり」枠の空きスペースに合わせる */
+    left: 8%;
     font-size: 3rem;
     font-weight: bold;
     color: #4a3024;
@@ -140,24 +171,23 @@
 /* セリフ：画像下部の吹き出しの中に配置 */
 .ui-message {
     position: absolute;
-    bottom: 5%; /* 吹き出しの底の位置 */
-    left: 5%; /* 吹き出しの左の位置 */
-    width: 60%; /* 吹き出しの幅いっぱいに使う */
-    height: 25%; /* 吹き出しの高さに合わせる */
+    bottom: 5%;
+    left: 5%;
+    width: 60%;
+    height: 25%;
     display: flex;
-    align-items: center; /* 上下中央 */
-    justify-content: left; /* 左右中央 */
+    align-items: center;
+    justify-content: flex-start;
     text-align: left;
     padding: 0 40px;
     box-sizing: border-box;
 }
 
 .ui-message p {
-    /* ★ここを大きくする */
-    font-size: 2.8rem;     /* 2.0rem から 2.8rem くらいにアップ */
-    line-height: 1.4;      /* 行間を少し広げると読みやすい */
-    font-weight: bold;     /* 太字にするとより強調されます */
-    color: #4a3024;        /* 文字色 */
+    font-size: 2.8rem;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #4a3024;
     margin: 0;
 }
 
@@ -168,21 +198,18 @@
     right: 5%;
     display: flex;
     flex-direction: column;
-    gap: 5px; /* ボタン同士の隙間 */
+    gap: 5px;
 }
 
-/* ボタンのサイズ修正（ここが重要！） */
 .q-btn {
-    width: 400px;  /* 画像の横幅 */
-    height: 130px;  /* ★300pxから修正：画像の縦幅 */
+    width: 400px;
+    height: 130px;
     background: transparent no-repeat center/contain;
-	/* 背景の設定をここに変更 */
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%; /* ★重要！containから 100% 100% に変更 */
-
+    background-size: 100% 100%;
     border: none;
-	background-color: transparent;
+    background-color: transparent;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -191,12 +218,11 @@
 }
 
 .q-btn span {
-	/* 日本語の標準的な明朝体セット */
     font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
     font-size: 3rem;
     font-weight: bold;
     color: #4a3024;
-    margin-top: -5px; /* 文字の位置を微調整 */
+    margin-top: -5px;
 }
 
 .btn-y { background-image: url("../img/toshiko_yellow.png"); }
@@ -216,16 +242,103 @@
     transition: transform 0.1s;
 }
 
-/* modal-overlay の display: none を JS で flex に変えることで表示されます */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: none; /* ← ここが重要 */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.q-btn:hover,
+.wakatta-btn:hover {
+    transform: scale(1.05);
 }
 
-.q-btn:hover, .wakatta-btn:hover { transform: scale(1.05); }
-.q-btn:active, .wakatta-btn:active { transform: scale(0.95); }
+.q-btn:active,
+.wakatta-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* ==========================================
+   --- スマホ向け調整 (画面幅 768px 以下のみ適用) ---
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. 前面枠画像がスマホ画面の左右で切れないようにフィットさせる */
+    .fg-ui-overlay {
+        background-size: 5000% 100%;
+    }
+
+   /* 2. キャラクター */
+.char-layer {
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 0; /* 左端に寄せるために 5% から 0 に変更 */
+    pointer-events: none;
+}
+
+.toshiko-img {
+    height: 80vh;
+    /* translateXで「左へ」、translateYで「上へ」引き上げ */
+    transform: translateX(-30%) translateY(5%); /* 元の (-5%, 20%) から変更 */
+}
+
+    /* 3. のこり回数カウンター（左上枠内にフィット） */
+    .ui-counter {
+        top: 3.5%;
+        left: 6.5%;
+        font-size: 1.5rem;
+    }
+
+    /* 4. 質問ボタン群（右上枠内にフィット） */
+    .ui-choices {
+        top: 20%;
+        right: 4.5%;
+        gap: 3px;
+    }
+
+    .q-btn {
+        width: 165px;
+        height: 70px;
+    }
+
+    .q-btn span {
+        font-size: 1.25rem;
+        margin-top: -2px;
+    }
+
+    /* 5. わかった！ボタン（右下枠内にフィット） */
+    .wakatta-btn {
+        bottom: 3.5%;
+        right: 4.5%;
+        width: 135px;
+        height: 52px;
+    }
+
+    /* 6. セリフ（吹き出し内にフィット） */
+    .ui-message {
+        bottom: 3.5%;
+        left: 4.5%;
+        width: 58%;
+        height: 25%;
+        padding: 0 15px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .ui-message p {
+        font-size: 1.1rem;
+        line-height: 1.35;
+    }
+
+    /* 7. シェア用モーダルカード */
+    .share-card {
+        padding: 20px 15px;
+        width: 85%;
+    }
+
+    #result-text {
+        font-size: 1rem;
+        margin: 12px 0;
+    }
+
+    #result-text strong {
+        font-size: 1.4rem;
+    }
+}
