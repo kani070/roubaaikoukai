@@ -1,69 +1,348 @@
+@charset "UTF-8";
+
 /* 全画面設定 */
-.game-container { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
-.layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* スマホのアドレスバー伸縮による縦ズレ・スクロール発生を防止 */
+    position: relative;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /* 背景・キャラ */
-.bg-washitsu { background: url("../img/kitchen.png") center/cover no-repeat; z-index: 1; }
-.anger-overlay { position: absolute; inset: 0; z-index: 5; pointer-events: none; transition: 1s; }
-.anger-overlay.is-angry { box-shadow: inset 0 0 200px rgba(255, 0, 0, 0.7); background: rgba(255, 0, 0, 0.1); }
-.char-layer { z-index: 2; display: flex; align-items: flex-end; padding-left: 5%; pointer-events: none; }
-.yoshie-img { height: 130vh; transform: translateX(-5%) translateY(20%); }
-.fg-ui-overlay { background: url("../img/toshiko_fukidashi.png") center/cover no-repeat; z-index: 3; pointer-events: none; }
+.bg-washitsu {
+    background: url("../img/kitchen.png") center/cover no-repeat;
+    z-index: 1;
+}
+
+.anger-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    transition: 1s;
+}
+
+.anger-overlay.is-angry {
+    box-shadow: inset 0 0 200px rgba(255, 0, 0, 0.7);
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.char-layer {
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 5%;
+    pointer-events: none;
+}
+
+.yoshie-img {
+    height: 130vh;
+    transform: translateX(-5%) translateY(20%);
+}
+
+.fg-ui-overlay {
+    background: url("../img/toshiko_fukidashi.png") center/cover no-repeat;
+    z-index: 3;
+    pointer-events: none;
+}
 
 /* UIレイヤー */
 .ui-content-layer {
     font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
-    position: absolute; inset: 0; z-index: 10; pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
 }
-.ui-counter, .ui-message, .ui-choices, .wakatta-btn, .q-btn { pointer-events: auto; }
 
-.ui-counter { position: absolute; top: 5%; left: 8%; font-size: 3rem; font-weight: bold; color: #4a3024; }
-.ui-message { position: absolute; bottom: 5%; left: 5%; width: 60%; height: 25%; display: flex; align-items: center; padding: 0 40px; }
-.ui-message p { font-size: 2.5rem; line-height: 1.4; font-weight: bold; color: #4a3024; }
+.ui-counter,
+.ui-message,
+.ui-choices,
+.wakatta-btn,
+.q-btn {
+    pointer-events: auto;
+}
 
-.ui-choices { position: absolute; top: 5%; right: 5%; display: flex; flex-direction: column; gap: 5px; }
-.q-btn { width: 400px; height: 130px; border: none; cursor: pointer; background: transparent no-repeat center/100% 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.1s; }
+.ui-counter {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4a3024;
+}
+
+.ui-message {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 60%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.ui-message p {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #4a3024;
+    margin: 0;
+}
+
+.ui-choices {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.q-btn {
+    width: 400px;
+    height: 130px;
+    border: none;
+    cursor: pointer;
+    background: transparent no-repeat center/100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
 .q-btn span {
-	/* 日本語の標準的な明朝体セット */
     font-family: "Hiragino Mincho ProN", "MS PMincho", "serif";
     font-size: 3rem;
     font-weight: bold;
     color: #4a3024;
-    margin-top: -5px; /* 文字の位置を微調整 */
+    margin-top: -5px;
 }
 
-.btn-y { background-image: url("../img/toshiko_red.png"); }
-.btn-r { background-image: url("../img/toshiko_yellow.png"); }
-.btn-g { background-image: url("../img/toshiko_green.png"); }
-.btn-b { background-image: url("../img/toshiko_yellow.png"); }
+.btn-y {
+    background-image: url("../img/toshiko_red.png");
+}
 
-.wakatta-btn { position: absolute; bottom: 4%; right: 5%; width: 200px; height: 80px; background: url("../img/toshiko_wakatta.png") no-repeat center/contain; border: none; cursor: pointer; transition: transform 0.1s; }
+.btn-r {
+    background-image: url("../img/toshiko_yellow.png");
+}
 
-.q-btn:hover, .wakatta-btn:hover { transform: scale(1.05); }
-.q-btn:active, .wakatta-btn:active { transform: scale(0.95); }
+.btn-g {
+    background-image: url("../img/toshiko_green.png");
+}
+
+.btn-b {
+    background-image: url("../img/toshiko_yellow.png");
+}
+
+.wakatta-btn {
+    position: absolute;
+    bottom: 4%;
+    right: 5%;
+    width: 200px;
+    height: 80px;
+    background: url("../img/toshiko_wakatta.png") no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.q-btn:hover,
+.wakatta-btn:hover {
+    transform: scale(1.05);
+}
+
+.q-btn:active,
+.wakatta-btn:active {
+    transform: scale(0.95);
+}
 
 /* クリアポップアップ */
 .modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.8);
-    display: none; justify-content: center; align-items: center; z-index: 2000;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
 }
-.share-card { background: white; padding: 30px; border-radius: 20px; width: 80%; max-width: 400px; text-align: center; }
-.share-stats strong { font-size: 2rem; color: #d32f2f; }
-.share-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.sns-btn { padding: 12px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; }
-.x-btn { background: #000; color: white; }
-.title-btn { background: #8d6e63; color: white; }
+
+.share-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.share-stats strong {
+    font-size: 2rem;
+    color: #d32f2f;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sns-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.x-btn {
+    background: #000;
+    color: white;
+}
+
+.title-btn {
+    background: #8d6e63;
+    color: white;
+}
 
 /* YOU DIED 画面 */
-.death-overlay { position: fixed; inset: 0; background: black; z-index: 10000; display: none; justify-content: center; align-items: center; }
+.death-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .death-text {
-    color: #8a0000; font-family: 'Times New Roman', serif; font-size: 8rem; letter-spacing: 1.5rem;
-    font-weight: bold; text-shadow: 0 0 20px rgba(255,0,0,0.5); opacity: 0; transform: scale(1.2);
+    color: #8a0000;
+    font-family: 'Times New Roman', serif;
+    font-size: 8rem;
+    letter-spacing: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    opacity: 0;
     animation: deathFade 4s forwards;
 }
+
 @keyframes deathFade {
-    0% { opacity: 0; transform: scale(1.2); }
-    20% { opacity: 1; transform: scale(1); }
-    80% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   --- スマホ向け調整 (画面幅 768px 以下のみ適用) ---
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. 前面枠画像がスマホ画面の左右で切れないようにフィットさせる */
+    .fg-ui-overlay {
+        background-size: 500% 100%;
+    }
+
+    /* 2. キャラクター */
+    .char-layer {
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding-left: 0;
+        pointer-events: none;
+    }
+
+    .yoshie-img {
+        height: 80vh;
+        transform: translateX(-30%) translateY(5%);
+    }
+
+    /* 3. のこり回数カウンター（左上枠内にフィット） */
+    .ui-counter {
+        top: 3.5%;
+        left: 6.5%;
+        font-size: 1.5rem;
+    }
+
+    /* 4. 質問ボタン群（右上枠内にフィット） */
+    .ui-choices {
+        top: 20%;
+        right: 4.5%;
+        gap: 3px;
+    }
+
+    .q-btn {
+        width: 165px;
+        height: 70px;
+    }
+
+    .q-btn span {
+        font-size: 1.25rem;
+        margin-top: -2px;
+    }
+
+    /* 5. わかった！ボタン（右下枠内にフィット） */
+    .wakatta-btn {
+        bottom: 3.5%;
+        right: 4.5%;
+        width: 135px;
+        height: 52px;
+    }
+
+    /* 6. セリフ（吹き出し内にフィット） */
+    .ui-message {
+        bottom: 3.5%;
+        left: 4.5%;
+        width: 58%;
+        height: 25%;
+        padding: 0 15px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .ui-message p {
+        font-size: 1.1rem;
+        line-height: 1.35;
+    }
+
+    /* 7. シェア用モーダルカード */
+    .share-card {
+        padding: 20px 15px;
+        width: 85%;
+    }
+
+    /* 8. スマホ表示時の YOU DIED 文字サイズ調整（画面はみ出し防止） */
+    .death-text {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
 }
