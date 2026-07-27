@@ -1,5 +1,8 @@
-/* 全体のリセット */
-body, html {
+@charset "UTF-8";
+
+/* --- 全体のリセット --- */
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,35 +11,36 @@ body, html {
     font-family: sans-serif;
 }
 
-
+/* --- 背景 --- */
 .bg {
-  position: absolute;
-  inset: 0;
-  background: url("../img/selectbg.png") center/cover no-repeat;
-  filter:  brightness(0.95);
-  z-index: 0; /* 背景は0 */
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: url("../img/selectbg.png") center/cover no-repeat;
+    filter: brightness(0.95);
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* --- コンテンツが背景より前に来るように修正 --- */
-
+/* --- PC・大画面向け（元のCSSを100%維持） --- */
 .game-container {
-    position: relative; /* 子要素のabsoluteの基準にする */
+    position: relative;
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* スマホのアドレスバー出入りによる高さずれを防止 */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; /* 配置のバランス調整 */
+    justify-content: space-around;
+    box-sizing: border-box;
 }
 
-/* キャラクター選択エリアを背景より手前に */
+/* キャラクター選択エリア */
 .character-select {
-    position: relative; /* これが必要 */
-    z-index: 10;        /* 背景(0)より大きい数値 */
+    position: relative;
+    z-index: 10;
     display: flex;
     gap: 20px;
-	margin-top: 150px;   /* マイナス値にすると上に上がります */
+    margin-top: 150px;
     justify-content: center;
     align-items: center;
 }
@@ -49,22 +53,21 @@ body, html {
 
 .char-card img {
     display: block;
-    max-width: 400px; /* 画面サイズに合わせて調整 */
+    max-width: 400px;
     height: 60vh;
-	width: auto;
+    width: auto;
 }
 
-/* 選択された時のエフェクト（外光と拡大） */
+/* 選択された時のエフェクト */
 .char-card.selected {
     transform: scale(1.05);
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
-    /* 画像の外側に線を出す場合 */
 }
 
 /* ボタンエリア */
 .button-area {
-    position: relative; /* これが必要 */
-    z-index: 10;        /* 背景(0)より大きい数値 */
+    position: relative;
+    z-index: 10;
     display: flex;
     gap: 40px;
     margin-bottom: 5px;
@@ -74,13 +77,55 @@ body, html {
     background: none;
     border: none;
     cursor: pointer;
-   transition: transform 0.15s ease, filter 0.15s ease; /* transitionを追加 */
+    transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 .action-btn img {
+    display: block;
     max-height: 200px;
+    height: auto;
 }
 
 .action-btn:active {
-    transform: scale(0.95); /* 押した感 */
+    transform: scale(0.95);
+}
+
+
+/* --- スマホ向け調整 (画面幅 768px 以下のみ適用) --- */
+@media (max-width: 768px) {
+    .bg {
+        background-position: center;
+    }
+
+    .game-container {
+        justify-content: space-between;
+        padding: 40px 10px 20px; /* 上下に適度な余白を確保 */
+    }
+
+    /* 上部のマージンをスマホ向けに小さくし、中央寄りへ */
+    .character-select {
+        margin-top: 150px;
+        gap:1px;
+        width: 100%;
+    }
+
+    /* キャラカード：画面幅・高さを超えないように上限を設定 */
+    .char-card img {
+        width: 40vw;
+        max-width: 160px;
+        height: auto;
+        max-height: 52vh; /* 縦幅が狭いスマホでも画面からはみ出さないように抑える */
+        object-fit: contain;
+    }
+
+    /* ボタンエリア */
+    .button-area {
+        gap: 0px;
+        margin-bottom: 10px;
+    }
+
+    .action-btn img {
+        max-height: 100px; /* スマホ時のボタンの高さを収まりが良いサイズに */
+        width: auto;
+    }
 }
