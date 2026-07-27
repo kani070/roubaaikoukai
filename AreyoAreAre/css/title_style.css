@@ -1,11 +1,15 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/* --- PC・大画面向け（元のCSSを100%維持） --- */
 #title-screen {
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* スマホのアドレスバー対策（PCでは100vhと同じ動きになります） */
   overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 .bg {
@@ -51,12 +55,13 @@
 
 .img-btn.main {
   width: 500px;
-   margin: 0 auto -100px;
+  margin: 0 auto -100px;
+  animation: floatBtn 2.5s ease-in-out infinite;
 }
 
 .img-btn.sub {
   width: 400px;
-   margin: 0 auto 10px;
+  margin: 0 auto 10px;
 }
 
 .icon-btn {
@@ -70,7 +75,8 @@
 
 .img-btn,
 .icon-btn {
-  transition: transform 0.15s ease, filter 0.15s ease;display: block;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  display: block;
 }
 
 .img-btn:hover,
@@ -85,16 +91,44 @@
   filter: brightness(0.9);
 }
 
-.img-btn.main {
-  animation: floatBtn 2.5s ease-in-out infinite;
-}
-
-
-#title-screen {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
 @keyframes fadeIn {
   to { opacity: 1; }
+}
+
+
+/* --- スマホ向け調整 (画面幅 768px 以下のみ適用) --- */
+@media (max-width: 768px) {
+  .logo {
+    width: 100%;
+    top: 14%;
+  }
+
+  .menu {
+    bottom: 2%;
+    width: 100%;
+  }
+
+  /* メインボタン：画面幅に連動させつつネガティブマージンも縮小 */
+  .img-btn.main {
+    width: 80vw;
+    max-width: 300px;
+    margin: 0 auto -12vw; /* スマホ画面に合わせて重なり幅を可変に */
+  }
+
+  /* サブボタン */
+  .img-btn.sub {
+    width: 70vw;
+    max-width: 230px;
+    margin: 0 auto 10px;
+  }
+
+  /* 左右アイコン：小さくして中央ボタンとの衝突を回避 */
+  .icon-btn {
+    width: 16vw;
+    max-width: 65px;
+    bottom: 4%;
+  }
+
+  .icon-btn.left { left: 4%; }
+  .icon-btn.right { right: 4%; }
 }
