@@ -274,9 +274,9 @@
 }
 
 .toshiko-img {
-    height: 80vh;
+    height: 60vh;
     /* translateXで「左へ」、translateYで「上へ」引き上げ */
-    transform: translateX(-30%) translateY(5%); /* 元の (-5%, 20%) から変更 */
+    transform: translateX(-10%) translateY(-2%); /* 元の (-5%, 20%) から変更 */
 }
 
     /* 3. のこり回数カウンター（左上枠内にフィット） */
