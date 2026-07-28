@@ -99,8 +99,8 @@
 /* --- スマホ向け調整 (画面幅 768px 以下のみ適用) --- */
 @media (max-width: 768px) {
   .logo {
-    width: 100%;
-    top: 14%;
+    width: 400%;
+    top: 30%;
   }
 
   .menu {
@@ -110,14 +110,14 @@
 
   /* メインボタン：画面幅に連動させつつネガティブマージンも縮小 */
   .img-btn.main {
-    width: 80vw;
+    width: 200vw;
     max-width: 300px;
     margin: 0 auto -12vw; /* スマホ画面に合わせて重なり幅を可変に */
   }
 
   /* サブボタン */
   .img-btn.sub {
-    width: 70vw;
+    width: 150vw;
     max-width: 230px;
     margin: 0 auto 10px;
   }
