@@ -33,7 +33,7 @@
 }
 
 .toshiko-img {
-    height: 60vh;
+    height: 130vh;
     transform: translateX(-5%) translateY(20%);
 }
 
@@ -274,7 +274,7 @@
 }
 
 .toshiko-img {
-    height: 60vh;
+    height: 30vh;
     /* translateXで「左へ」、translateYで「上へ」引き上げ */
     transform: translateX(-10%) translateY(-2%); /* 元の (-5%, 20%) から変更 */
 }
